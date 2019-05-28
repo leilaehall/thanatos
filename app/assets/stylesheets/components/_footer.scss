@@ -1,0 +1,22 @@
+footer {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 0px 50px;
+  color: #BCB9B9;
+}
+
+footer strong {
+  word-spacing: 10px;
+  margin-left: 15px;
+}
+
+footer .footer-links {
+  display: flex;
+}
+
+footer .footer-links p {
+  margin: 0;
+}
