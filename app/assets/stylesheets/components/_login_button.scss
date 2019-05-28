@@ -1,0 +1,18 @@
+.login-button {
+  // width: 137px;
+  // height: 52px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 49px;
+  text-align: center;
+  background-color: Transparent;
+  border: 1px;
+  color: #2C89B1;
+  margin-right: 10px;
+}
+
+.login-button:hover{
+  filter: brightness(60%);
+}
