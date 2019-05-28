@@ -71,7 +71,7 @@
           required: true,
           input_html: { autocomplete: "religion" }%>
 
-          <%= f.input :gender, collection: { "Male, Female, Other" } %>
+          <%= f.input :gender,:collection => ['January','February','December']%>
           </div>
 
           <%= f.input :scenario,
@@ -79,7 +79,6 @@
           input_html: { autocomplete: "scenario" } %>
         </div>
         </div>
-        <%= f.button :submit %>
         <% end %>
       </div>
     </div>
