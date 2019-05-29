@@ -1,85 +1,118 @@
 
- <div class="container">
-  <div class="form-wrapper">
-    <div class="form-container">
-      <div class="form-header">
-        <h2 class="form-title">PROFILE</h2>
-        <span class="line"></span>
-      </div>
-      <div class="form-body">
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
-        <div class="form-inputs">
-          <div class="nameinput">
-          <%= f.input :first_name,
-          required: true,
-          autofocus: true,
-          input_html: { autocomplete: "first_name" }%>
+<div class="signup-header">
+  <img src="../images/thanatos-dash-placeholder.png">
+  <div class="signup-header-infos">
+    <h2>SIGN-UP TO THANATOS DASHBOARD</h2>
+    <p>Welcome to Thanatos, the best place to plan all after-death matters.</p>
+    <p>Sign-up now and access your personalized dashboard.</p>
+  </div>
+</div>
 
-          <%= f.input :last_name,
-          required: true,
-          input_html: { autocomplete: "last_name" } %>
-         </div>
-
-          <%= f.input :address,
-          required: true,
-          input_html: { autocomplete: "address" } %>
-        </div>
-        </div>
-
-      </div>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+<div class="line-container">
+  <div class="vertical-line">
+  </div>
+  <div class="line-points">
+    <div class="line-point line-point-first">
+      1
     </div>
-
-
-  <div class="form-wrapper">
-    <div class="form-container">
-      <div class="form-header">
-        <h2 class="form-title">ACCOUNT</h2>
-        <span class="line"></span>
-      </div>
-      <div class="form-body">
-
-        <div class="form-inputs">
-          <%= f.input :email,
-          required: true,
-          autofocus: true,
-          input_html: { autocomplete: "email" }%>
-          <%= f.input :password,
-          required: true,
-          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-          input_html: { autocomplete: "new-password" } %>
-          <%= f.input :password_confirmation,
-          required: true,
-          input_html: { autocomplete: "new-password" } %>
-        </div>
-        </div>
-      </div>
+    <div class="line-point line-point-second">
+      2
     </div>
-
-
-  <div class="form-wrapper">
-    <div class="form-container">
-      <div class="form-header">
-        <h2 class="form-title">PERSONAL INFORMATION</h2>
-        <span class="line"></span>
+    <div class="line-point line-point-third">
+      3
+    </div>
+    <div class="line-point line-point-fourth">
+      ✓
+    </div>
+  </div>
+</div>
       </div>
-      <div class="form-body">
-        <div class="form-inputs">
-          <div class="nameinput">
-          <%= f.input :religion,
-          autofocus: true,
-          required: true,
-          input_html: { autocomplete: "religion" }%>
 
-          <%= f.input :gender,:collection => ['January','February','December']%>
+
+      <div class="col-8">
+
+        <div class="form-wrapper">
+          <div class="form-container">
+            <div class="form-header">
+              <h2 class="form-title">PROFILE</h2>
+              <span class="line"></span>
+            </div>
+            <div class="form-body">
+              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= f.error_notification %>
+              <div class="form-inputs">
+                <div class="nameinput">
+                  <%= f.input :first_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "first_name" }%>
+
+                  <%= f.input :last_name,
+                  required: true,
+                  input_html: { autocomplete: "last_name" } %>
+                </div>
+
+                <%= f.input :address,
+                required: true,
+                input_html: { autocomplete: "address" } %>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <%= f.input :scenario,
-          required: true,
-          input_html: { autocomplete: "scenario" } %>
+
+        <div class="form-wrapper">
+          <div class="form-container">
+            <div class="form-header">
+              <h2 class="form-title">ACCOUNT</h2>
+              <span class="line"></span>
+            </div>
+            <div class="form-body">
+
+              <div class="form-inputs">
+                <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+                <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+                <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+              </div>
+            </div>
+          </div>
         </div>
+
+
+        <div class="form-wrapper">
+          <div class="form-container">
+            <div class="form-header">
+              <h2 class="form-title">PERSONAL INFORMATION</h2>
+              <span class="line"></span>
+            </div>
+            <div class="form-body">
+              <div class="form-inputs">
+                <div class="nameinput">
+                  <%= f.input :religion,:collection => ['Christian','Muslim','Other']%>
+
+                  <%= f.input :gender,:collection => ['Male','Female','Other']%>
+                </div>
+
+                <%= f.input :scenario, :collection => ['Planning own affairs','Panning for loved one']%>
+              </div>
+            </div>
+          </div>
         </div>
-        <% end %>
+          <%= f.submit 'GET STARTED', class: "btn get-started-button signup-form-btn" %>
+       <% end %>
       </div>
     </div>
   </div>
+</section>
