@@ -43,3 +43,72 @@
   align-items: flex-end;
   position: relative;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 13px;
+  padding-left: 70px;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card-dashboard {
+  color: #2C89B1;
+  font-size: 25px;
+  border-style: solid;
+  text-align: center;
+  background: white;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 15px;
+  width: 280px;
+  justify-content: center;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    color: #2C89B1;
+
+  }
+}
+
+.card-centric {
+  padding-top: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
