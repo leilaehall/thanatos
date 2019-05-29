@@ -1,0 +1,14 @@
+#map {
+  width: 580px;
+  height: 100vh;
+  position: sticky;
+  margin-top:20px;
+  top: 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-right: 10px;
+}
+
+.main-view-container{
+  display: flex;
+  justify-content: space-between;
+}
