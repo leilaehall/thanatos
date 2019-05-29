@@ -1,18 +1,16 @@
 .signup-button {
   border-radius: 25px;
-  border: 3px solid #C3BFBF;
-  color: #565656;
-  width: 154px;
-  height: 60px;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 29px;
+  border: 3px solid #2C89B1;
+  color: #2C89B1;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  background-color: Transparent;
-  }
+  justify-content: center;
+  padding: 5px 10px;
 
-  .signup-button:hover{
-    filter: brightness(50%);
-    }
+}
+
+.signup-button:hover{
+  filter: brightness(60%);
+}

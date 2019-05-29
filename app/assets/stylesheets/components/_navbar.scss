@@ -1,12 +1,32 @@
-.navbar-lewagon {
+.navbar-thanatos {
   justify-content: space-between;
-  background: white;
+  background: #FFFFFF;
+  box-shadow: 0px 6px 10px -10px;
+  padding-left: 20px;
+  padding-right: 30px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-thanatos h1 {
+  font-family: 'Source Serif Pro', serif;
+  font-weight: bold;
+  color: #2F2F2F;
+  font-size: 36px;
+  margin-bottom: 0px;
+  margin-left: 5px;
+}
+
+.navbar-thanatos .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-thanatos .navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-thanatos .navbar-brand img {
   width: 40px;
 }
+
+
