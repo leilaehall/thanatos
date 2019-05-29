@@ -1,0 +1,38 @@
+<div class="main-view-container">
+  <div class="cards-container">
+
+      <div class="search-bar">
+      <%= form_tag companies_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a company"
+        %>
+        <%= button_tag "SEARCH", class:"get-started-button search-bar-btn"%>
+      <% end %>
+      </div>
+
+
+      <div class="company-cards">
+        <% @companies.each do |company| %>
+          <div class="card-company">
+            <img src=<%= company.logo %>>
+            <div class="card-company-infos">
+              <div>
+                <h2><%= link_to company.name%></h2>
+                <p><%= company.address %></p>
+                <p><strong><%= company.category %></strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+
+    <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoicmFuZG9tbmFtZXdvb3ciLCJhIjoiY2p2ODQzdWxpMDNpcTN5bXQ0YzF1b2c2byJ9.Sce2Sg97Y7pNccNbwoJp7g'>
+
+  </div>
+
+</div>
