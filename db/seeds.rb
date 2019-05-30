@@ -45,36 +45,48 @@ companies_attributes = [
   {
     name: "Brenda's Bouquets",
     address: 'High Street, Hampton Wick, KT1',
+    company_email: 'niceflowers@gmail.com',
+    description: 'We sell flowers, buy them before you die',
     category: 'florist',
     logo: File.open(Rails.root.join("db/fixtures/companies/florist2.jpg"))
   },
   {
     name: "Ursula's Undertakers",
     address: 'King Street, Twickenham, London, TW1',
+    company_email: 'timetodie1978@gmail.com',
+    description: 'Ready to take care of your dead carcass',
     category: 'funeral home',
     logo: File.open(Rails.root.join("db/fixtures/companies/funeralhome1.jpg"))
   },
   {
     name: "Clifford's Classy Cars",
     address: 'St Margarets Road, Twickenham, TW1',
+    company_email: 'i_am_awesome_99@gmail.com',
+    description: 'Nice cars that will carry your dead body',
     category: 'car rental',
     logo: File.open(Rails.root.join("db/fixtures/companies/car1.jpg"))
   },
   {
     name: "Maggie's Motors",
     address: 'High Street, Teddington, KT1',
+    company_email: 'fastandfurious@gmail.com',
+    description: 'Sweet cars',
     category: 'car rental',
     logo: File.open(Rails.root.join("db/fixtures/companies/car2.jpg"))
   },
   {
     name: "Freddie's Flowers",
-    address: 'Royal Parade, Richmond, TW9',
+    address: 'Royal Parade, Richmond, TW9 3QD',
+    company_email: 'hello@gmail.com',
+    description: 'Whish you could be alive to see how beautifull the flowers will look at your funeral',
     category: 'florist',
     logo: File.open(Rails.root.join("db/fixtures/companies/florist1.jpg"))
   },
   {
     name: "Cathy's Coffins",
     address: 'Church Street, Twickenham, TW1',
+    company_email: 'rest_in_peace_baby@gmail.com',
+    description: 'We will warm your cold body with a wooden jacket ;)',
     category: 'funeral home',
     logo: File.open(Rails.root.join("db/fixtures/companies/funeralhome2.jpg"))
   }

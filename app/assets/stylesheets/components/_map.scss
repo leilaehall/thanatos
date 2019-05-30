@@ -1,5 +1,5 @@
 #map {
-  width: 580px;
+  width: 70%;
   height: 100vh;
   position: sticky;
   margin-top:20px;
@@ -11,4 +11,55 @@
 .main-view-container{
   display: flex;
   justify-content: space-between;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  width: 210px;
+  height: 194px;
+}
+
+.mapboxgl-popup-close-button{
+  right: -6px;
+    top: -6px;
+    color:#2C89B1;
+}
+
+.card-map {
+  overflow: hidden;
+    background: white;
+
+}
+
+.card-map > img {
+  height: 90px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-map h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color:#2C89B1;
+}
+
+.card-map p {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+
+.card-map .card-map-infos {
+  margin-bottom: -26px;
+    margin-top: 2px;
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
 }
