@@ -8,4 +8,5 @@ class DashboardController < ApplicationController
   def get_progress
     @progress = '10%'
   end
+
 end
