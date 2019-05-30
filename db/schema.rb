@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 2019_05_30_132701) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +48,8 @@ ActiveRecord::Schema.define(version: 2019_05_30_132701) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "phone_number"
+    t.boolean "email_confirmed", default: false
+    t.string "confirm_token"
     t.index ["user_id"], name: "index_delegates_on_user_id"
   end
 

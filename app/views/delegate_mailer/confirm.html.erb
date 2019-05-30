@@ -1,0 +1,9 @@
+<p>Hi <%= @delegate.email %>,</p>
+
+<p>Your friend, <%= @delegate.user.first_name %>, has selected you as their delegate for Thanatos. Please kindly confirm you are happy with this by clicking on the URL below</p>
+
+<p><%= confirm_email_delegate_url(@delegate, @delegate.confirm_token) %></p>
+
+<p>Thank you,</p>
+
+<p>The Thanatos Team</p>
