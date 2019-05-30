@@ -1,49 +1,48 @@
 
 <div class="signup-header">
 <!--   <img src="laptop.jpg">
- -->  <%= image_tag "laptop.jpg" %>
-  <div class="signup-header-infos">
-    <h2>Sign-up to your Thanatos Dashboard</h2>
-    <p>Welcome to Thanatos, the best place to plan all after-death matters.</p>
-    <p>Sign-up now and access your personalized dashboard.</p>
-  </div>
+-->  <%= image_tag "laptop.jpg" %>
+<div class="signup-header-infos">
+  <h2>Sign-up & Access your Thanatos Dashboard</h2>
+  <p>Welcome to Thanatos, the best place to plan all after-death matters.</p>
+  <p>Sign-up now and access your personalized dashboard.</p>
+</div>
 </div>
 
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-4">
-<div class="line-container">
-  <div class="vertical-line">
-  </div>
-  <br>
-  <br>
-  <div class="line-points">
-    <div class="line-point line-point-first" style="font-size: 40px">
-      1
-    </div>
-    <div class="line-point line-point-second" style="font-size: 40px">
-      2
-    </div>
-    <br>
-    <br>
-    <div class="line-point line-point-third" style="font-size: 40px">
-      3
-    </div>
-    <div class="line-point line-point-fourth" style="font-size: 40px">
-      ✓
-    </div>
-  </div>
-</div>
+     <div class="col-3">
+      <div class="line-container">
+        <div class="vertical-line">
+        </div>
+        <br>
+        <br>
+        <div class="line-points">
+          <div class="line-point line-point-first" style="font-size: 30px">
+            1
+          </div>
+          <div class="line-point line-point-second" style="font-size: 30px">
+            2
+          </div>
+          <br>
+          <br>
+          <div class="line-point line-point-third" style="font-size: 30px">
+            3
+          </div>
+          <div class="line-point line-point-fourth" style="font-size: 30px">
+            ✓
+          </div>
+        </div>
       </div>
+    </div>
 
+    <div class="col-8">
 
-      <div class="col-8">
-
-        <div class="form-wrapper">
-          <div class="form-container">
-            <div class="form-header">
-              <h2 class="form-title">PROFILE</h2>
+      <div class="form-wrapper">
+        <div class="form-container">
+          <div class="form-header">
+            <h3 class="form-title">PROFILE</h2>
               <span class="line"></span>
             </div>
             <div class="form-body">
@@ -73,55 +72,55 @@
         <div class="form-wrapper">
           <div class="form-container">
             <div class="form-header">
-              <h2 class="form-title">ACCOUNT</h2>
-              <span class="line"></span>
-            </div>
-            <div class="form-body">
-
-              <div class="form-inputs">
-                <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-                <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-                <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+              <h3 class="form-title">ACCOUNT</h2>
+                <span class="line"></span>
               </div>
-            </div>
-          </div>
-        </div>
+              <div class="form-body">
 
-
-        <div class="form-wrapper">
-          <div class="form-container">
-            <div class="form-header">
-              <h2 class="form-title">PERSONAL INFORMATION</h2>
-              <span class="line"></span>
-            </div>
-            <div class="form-body">
-              <div class="form-inputs">
-                <div class="nameinput">
-                  <%= f.input :religion,:collection => ['Christianity','Islam','Hinduism','Buddhism','Sikhism', 'Judaism', 'Shinto', 'Non-religious', 'Other']%>
-
-                  <%= f.input :gender,:collection => ['Male','Female','Other']%>
+                <div class="form-inputs">
+                  <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+                  <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+                  <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
                 </div>
-
-                <%= f.input :scenario, :collection => ['I am planning for my own affairs','I lost a loved one & will plan for her/him']%>
               </div>
             </div>
           </div>
+
+
+          <div class="form-wrapper">
+            <div class="form-container">
+              <div class="form-header">
+                <h3 class="form-title">PERSONAL INFORMATION</h2>
+                  <span class="line"></span>
+                </div>
+                <div class="form-body">
+                  <div class="form-inputs">
+                    <div class="nameinput">
+                      <%= f.input :religion,:collection => ['Christianity','Islam','Hinduism','Buddhism','Sikhism', 'Judaism', 'Shinto', 'Non-religious', 'Other']%>
+
+                      <%= f.input :gender,:collection => ['Male','Female','Other']%>
+                    </div>
+
+                    <%= f.input :scenario, :collection => ['I am planning for my own affairs','I lost a loved one & will plan for her/him']%>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <%= f.submit 'GET STARTED', class: "btn confirm-signup" %>
+            <% end %>
+          </div>
         </div>
-        <br>
-          <%= f.submit 'GET STARTED', class: "btn confirm-signup" %>
-       <% end %>
       </div>
-    </div>
-  </div>
-  <br>
-  <br>
-  <br>
-</section>
+      <br>
+      <br>
+      <br>
+    </section>

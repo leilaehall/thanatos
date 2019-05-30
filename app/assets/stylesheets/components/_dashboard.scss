@@ -3,10 +3,22 @@
   color : #2C89B1
 }
 
+.head h2 {
+  font-size: 30px;
+  color: #2C89B1
+}
+
+.head h5 {
+  font-size: 20px;
+  color: #848080;
+  padding-left: 30px;
+ padding-right: 30px;
+}
+
 .head h4 {
  color: #848080;
- padding-left: 20px;
- padding-right: 20px;
+ padding-left: 40px;
+ padding-right: 40px;
 }
 
 [data-balloon]:after{
@@ -19,6 +31,8 @@
   background-color: white;
   border-radius: 8px;
   margin-bottom: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
   height: 130px;
   border-style: solid;
   color: #2C89B1;
@@ -28,6 +42,8 @@
 
 .rectangle h4 {
   color: black;
+  font-size: 20px;
+
 }
 
 .checked {
@@ -36,4 +52,9 @@
   position: absolute;
   top: -20px;
   right: 7px;
+}
+
+.side-search {
+  margin-left: 40px;
+  margin-right: 40px;
 }
