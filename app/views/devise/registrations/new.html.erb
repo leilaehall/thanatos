@@ -1,8 +1,9 @@
 
 <div class="signup-header">
-  <img src="../images/thanatos-dash-placeholder.png">
+<!--   <img src="laptop.jpg">
+ -->  <%= image_tag "laptop.jpg" %>
   <div class="signup-header-infos">
-    <h2>Sign-up to Thanatos Dashboard</h2>
+    <h2>Sign-up to your Thanatos Dashboard</h2>
     <p>Welcome to Thanatos, the best place to plan all after-death matters.</p>
     <p>Sign-up now and access your personalized dashboard.</p>
   </div>
@@ -15,17 +16,21 @@
 <div class="line-container">
   <div class="vertical-line">
   </div>
+  <br>
+  <br>
   <div class="line-points">
-    <div class="line-point line-point-first">
+    <div class="line-point line-point-first" style="font-size: 40px">
       1
     </div>
-    <div class="line-point line-point-second">
+    <div class="line-point line-point-second" style="font-size: 40px">
       2
     </div>
-    <div class="line-point line-point-third">
+    <br>
+    <br>
+    <div class="line-point line-point-third" style="font-size: 40px">
       3
     </div>
-    <div class="line-point line-point-fourth">
+    <div class="line-point line-point-fourth" style="font-size: 40px">
       ✓
     </div>
   </div>
@@ -105,14 +110,18 @@
                   <%= f.input :gender,:collection => ['Male','Female','Other']%>
                 </div>
 
-                <%= f.input :scenario, :collection => ['Planning own affairs','Panning for loved one']%>
+                <%= f.input :scenario, :collection => ['I am planning for my own affairs','I lost a loved one & will plan for her/him']%>
               </div>
             </div>
           </div>
         </div>
-          <%= f.submit 'GET STARTED', class: "btn get-started-button signup-form-btn" %>
+        <br>
+          <%= f.submit 'GET STARTED', class: "btn confirm-signup" %>
        <% end %>
       </div>
     </div>
   </div>
+  <br>
+  <br>
+  <br>
 </section>

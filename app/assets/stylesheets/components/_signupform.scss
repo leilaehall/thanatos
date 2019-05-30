@@ -45,11 +45,11 @@
 
 .signup-header {
   overflow: hidden;
-  height: 300px;
+  height: 250px;
   display: flex;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
-  margin-left:50px;
+  margin-left:340px;
   padding-left:50px;
 }
 
@@ -58,6 +58,9 @@
   width: 300px;
   object-fit: cover;
   padding-left:40px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
 }
 
 .signup-header h2 {
@@ -82,7 +85,7 @@ padding-bottom: 20px;
 }
 
 .line-container{
-      width: 100%;
+    width: 50px;
     height: 100%;
     position: relative;
 }
@@ -91,7 +94,7 @@ padding-bottom: 20px;
   position: absolute;
     top: 0px;
     bottom: 9px;
-    border: 2px solid #2C89B1;
+    border: 1px solid #2C89B1;
     left: 152px;
     margin-bottom: 20px;
 }
