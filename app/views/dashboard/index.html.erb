@@ -6,23 +6,22 @@
       <div class="head">
       <h1><strong>Welcome to your personal dashboard <%= current_user.first_name if current_user %>!</strong></h1>
       <br>
-      <h4>Your Thanatos dashboard helps you plan & organize : ensure all your important information is entered in each category on this page so we can securely pass it on to your delegate(s), after you go.</h4>
+      <h4>Your Thanatos dashboard <strong>helps you plan & organize</strong> : ensure all your important information is entered in each category on this page so we can securely pass it on to your delegate(s), after you go.</h4>
       <br>
-      <h4>Your listed wishes & sensitive information will only be accessible through an encrypted key given to your delegate(s).</h4>
+      <h4>Your listed wishes & sensitive information will <strong>only be accessible through an encrypted key given to your delegate(s)&#128274.</strong></h4>
       </div>
     </div>
   </div>
   <br>
-  <br>
   <section class="rectangle">
-    <!-- dashboard completion % bar -->
     <h4>Dashboard completion: <strong><%= @progress %></strong></h4>
+    <br>
     <div class="progress">
       <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @progress %>; background-color:#2C89B1"></div>
     </div>
+  </section>
     <br>
-    <br>
-
+  <section>
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
     <div class="search-form-control form-group">
       <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Looking to do anything in particular ?" />
@@ -31,44 +30,88 @@
       </button>
     </div>
     <% end %>
-
-  </section>
-
+</section>
 
   <section>
     <div class="cards">
-      <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="Your delegate will inherit all of your dashboard data & will be able to make sure everything is in order" data-balloon-pos="up">
+      <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="Your delegate will inherit all of your dashboard data after you go." data-balloon-pos="up">
         <%= link_to "Delegate(s)", delegates_path %>
+        <% if current_user.delegates.any? %>
+        <div class="checked">
+          <%= image_tag "check.png"%>
+        </div>
+        <% end %>
       </div>
       <!-- change path !! -->
-      <div class="card-dashboard card-centric"data-balloon-length="medium" data-balloon="Funeral type choice" data-balloon-pos="up">
+      <div class="card-dashboard card-centric"data-balloon-length="large" data-balloon="Your funeral basic choices: burrial vs. cremation,.." data-balloon-pos="up">
         <%= link_to "Basics", delegates_path %>
+        <!-- ADD IF STATEMENT AFTER PAGE CREATION -->
+         <% if  %>
+         <div class="checked">
+          <%= image_tag "check.png"%>
+        </div>
+         <% end %>
       </div>
       <!-- change path !! -->
-      <div class="card-dashboard" data-balloon-length="large" data-balloon="Enter all your wishes for your funeral ceremony" data-balloon-pos="up">
+      <div class="card-dashboard" data-balloon-length="large" data-balloon="Your detailed wishes for your funeral ceremony" data-balloon-pos="up">
         <%= link_to "Ceremony Preferences", delegates_path %>
+      <!-- ADD IF STATEMENT AFTER PAGE CREATION -->
+         <% if  %>
+         <div class="checked">
+          <%= image_tag "check.png"%>
+        </div>
+         <% end %>
       </div>
       <div class="card-dashboard" data-balloon-length="large" data-balloon="Browse for local businesses to prepare your funeral : funeral homes, florists,.." data-balloon-pos="up">
         <%= link_to "Find Local Businesses", companies_path %>
+        <!-- ADD IF STATEMENT AFTER PAGE CREATION -->
+         <% if  %>
+         <div class="checked">
+          <%= image_tag "check.png"%>
+        </div>
+         <% end %>
       </div>
 
       <div class="card-dashboard" data-balloon-length="large" data-balloon="Leave personal messages behind" data-balloon-pos="up">
         <%= link_to "Personal Messages", messages_path %>
+        <!-- ADD IF STATEMENT AFTER PAGE CREATION -->
+         <% if  %>
+         <div class="checked">
+          <%= image_tag "check.png"%>
+        </div>
+         <% end %>
       </div>
       <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="List your social media  & preferences so your delegate can execute your wishes" data-balloon-pos="up">
         <%= link_to "Social Medias" %>
+      <!-- ADD IF STATEMENT AFTER PAGE CREATION -->
+         <!-- <div class="checked">
+          <%= image_tag "check.png"%>
+        </div> -->
       </div>
-      <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="List your banking details so your delegate can close the accounts when you go." data-balloon-pos="up">
+      <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="List your banking details so your delegate can close all accounts when you go." data-balloon-pos="up">
         <%= link_to "Banking" %>
+      <!-- ADD IF STATEMENT AFTER PAGE CREATION -->
+         <!-- <div class="checked">
+          <%= image_tag "check.png"%>
+        </div> -->
       </div>
       <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="List your insurance policies so your delegate can close them when you go." data-balloon-pos="up">
         <%= link_to "Insurance" %>
+        <!--  <div class="checked">
+          <%= image_tag "check.png"%>
+        </div> -->
       </div>
-      <div class="card-dashboard" data-balloon-length="large" data-balloon="List your subscriptions & membership so your delegate can cancel them." data-balloon-pos="up">
+      <div class="card-dashboard" data-balloon-length="large" data-balloon="List your subscriptions & memberships so your delegate can cancel them." data-balloon-pos="up">
         <%= link_to "Subscriptions & Membership" %>
+       <!--   <div class="checked">
+          <%= image_tag "check.png"%>
+        </div> -->
       </div>
       <div class="card-dashboard" data-balloon-length="large" data-balloon="Upload important document & leave the contact details of your notary for your delegate" data-balloon-pos="up">
         <%= link_to "My Will" %>
+        <!--  <div class="checked">
+          <%= image_tag "check.png"%>
+        </div> -->
       </div>
     </div>
   </section>
