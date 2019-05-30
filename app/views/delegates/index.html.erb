@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <div class="form-wrapper-delegate">
+        <div class="form-container-delegate">
+          <div class="form-header-delegate">
+            <h2 class="form-title-delegate">CREATE DELEGATE</h2>
+            <span class="line"></span>
+          </div>
+          <div class="form-body-delegate">
+            <%= simple_form_for @delegate do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs-delegate">
+              <div class="nameinput-delegate">
+                <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "first_name" } %>
+
+                <%= f.input :last_name,
+                required: true,
+                input_html: { autocomplete: "last_name" } %>
+              </div>
+
+              <%= f.input :email,
+              required: true,
+              input_html: { autocomplete: "email" } %>
+
+              <%= f.input :phone_number,
+              required: true,
+              input_html: { autocomplete: "phone_number"} %>
+
+              <%= f.input :relationship,
+              required: true,
+              collection: ["Spouse", "Partner", "Father", "Mother", "Son", "Daughter", "Brother", "Sister", "Cousin", "Friend", "Lawyer", "Other"],
+              autofocus: true,
+              input_html: { autocomplete: "relationship" } %>
+            </div>
+          </div>
+          <div>
+            <%= f.submit "CONFIRM", class: "get-started-button-delegate" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="delegates-card-container">
+        <% @delegates.each do |delegate| %>
+        <div class="card-delegate" data-delegate-id="<%= delegate.id %>">
+          <h2><%= delegate.first_name %> <%= delegate.last_name %></h2>
+          <div class="card-infos-delegate">
+            <p><%= delegate.email%></p>
+            <p><%= delegate.phone_number %></p>
+            <p><%= delegate.relationship %></p>
+          </div>
+          <%= link_to "UPDATE", delegate, method: :update, remote: true, class: "card-update-button" %>
+          <%= link_to "X", delegate, method: :delete, remote: true, class: "card-delete-button" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

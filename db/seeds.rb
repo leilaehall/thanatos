@@ -87,6 +87,7 @@ delegates_attributes = [
     first_name: 'Chris',
     last_name: 'Holland',
     email: 'chris@example.com',
+    phone_number: '+447336472333',
     relationship: 'brother',
     user: users[1]
   },
@@ -94,6 +95,7 @@ delegates_attributes = [
     first_name: 'Teresa',
     last_name: 'Groot',
     email: 'theresa@example.com',
+    phone_number: '+447336232443',
     relationship: 'sister',
     user: users[1]
   },
@@ -101,6 +103,7 @@ delegates_attributes = [
     first_name: 'Eve',
     last_name: 'Marks',
     email: 'eve@example.com',
+    phone_number: '+447286448533',
     relationship: 'friend',
     user: users[2]
   },
@@ -108,6 +111,7 @@ delegates_attributes = [
     first_name: 'Tessa',
     last_name: 'Jenkins',
     email: 'tessa@example.com',
+    phone_number: '+447336472111',
     relationship: 'daughter',
     user: users[0]
   },
@@ -115,6 +119,7 @@ delegates_attributes = [
     first_name: 'Millie',
     last_name: 'Jenkins',
     email: 'millie@example.com',
+    phone_number: '+447336472988',
     relationship: 'daughter',
     user: users[0]
   }
