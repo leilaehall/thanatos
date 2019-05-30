@@ -14,10 +14,10 @@
   </div>
   <br>
   <section class="rectangle">
-    <h4>Dashboard completion: <strong><%= @progress %></strong></h4>
+    <h4>Dashboard completion: <strong><%= @progress %>%</strong></h4>
     <br>
     <div class="progress">
-      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= @progress %>; background-color:#2C89B1"></div>
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: <%= "#{@progress}%" %>; background-color:#2C89B1"></div>
     </div>
   </section>
     <br>
@@ -36,36 +36,34 @@
     <div class="cards">
       <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="Your delegate will inherit all of your dashboard data after you go." data-balloon-pos="up">
         <%= link_to "Delegate(s)", delegates_path %>
-        <% if current_user.delegates.any? %>
+        <% if current_user.delegates_complete? %>
         <div class="checked">
           <%= image_tag "check.png"%>
         </div>
         <% end %>
       </div>
-      <!-- change path !! -->
+
       <div class="card-dashboard card-centric"data-balloon-length="large" data-balloon="Your funeral basic choices: burrial vs. cremation,.." data-balloon-pos="up">
-        <%= link_to "Basics", delegates_path %>
-        <!-- ADD IF STATEMENT AFTER PAGE CREATION -->
-         <% if  %>
+        <%= link_to "Basics", basics_preferences_path %>
+         <% if current_user.basics_complete? %>
          <div class="checked">
           <%= image_tag "check.png"%>
         </div>
          <% end %>
       </div>
-      <!-- change path !! -->
+
       <div class="card-dashboard" data-balloon-length="large" data-balloon="Your detailed wishes for your funeral ceremony" data-balloon-pos="up">
-        <%= link_to "Ceremony Preferences", delegates_path %>
-      <!-- ADD IF STATEMENT AFTER PAGE CREATION -->
-         <% if  %>
+        <%= link_to "Ceremony Preferences", ceremony_preferences_path %>
+         <% if current_user.ceremony_complete? %>
          <div class="checked">
           <%= image_tag "check.png"%>
         </div>
          <% end %>
       </div>
+
       <div class="card-dashboard" data-balloon-length="large" data-balloon="Browse for local businesses to prepare your funeral : funeral homes, florists,.." data-balloon-pos="up">
         <%= link_to "Find Local Businesses", companies_path %>
-        <!-- ADD IF STATEMENT AFTER PAGE CREATION -->
-         <% if  %>
+         <% if current_user.business_selection_complete? %>
          <div class="checked">
           <%= image_tag "check.png"%>
         </div>
@@ -74,44 +72,56 @@
 
       <div class="card-dashboard" data-balloon-length="large" data-balloon="Leave personal messages behind" data-balloon-pos="up">
         <%= link_to "Personal Messages", messages_path %>
-        <!-- ADD IF STATEMENT AFTER PAGE CREATION -->
-         <% if  %>
+         <% if  current_user.messages_complete? %>
          <div class="checked">
           <%= image_tag "check.png"%>
         </div>
          <% end %>
       </div>
+
       <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="List your social media  & preferences so your delegate can execute your wishes" data-balloon-pos="up">
         <%= link_to "Social Medias" %>
-      <!-- ADD IF STATEMENT AFTER PAGE CREATION -->
-         <!-- <div class="checked">
+         <% if current_user.social_media_complete? %>
+         <div class="checked">
           <%= image_tag "check.png"%>
-        </div> -->
+        </div>
+         <% end %>
       </div>
+
       <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="List your banking details so your delegate can close all accounts when you go." data-balloon-pos="up">
         <%= link_to "Banking" %>
-      <!-- ADD IF STATEMENT AFTER PAGE CREATION -->
-         <!-- <div class="checked">
+         <% if current_user.banking_complete? %>
+         <div class="checked">
           <%= image_tag "check.png"%>
-        </div> -->
+        </div>
+         <% end %>
       </div>
+
       <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="List your insurance policies so your delegate can close them when you go." data-balloon-pos="up">
         <%= link_to "Insurance" %>
-        <!--  <div class="checked">
+        <% if current_user.insurance_complete? %>
+        <div class="checked">
           <%= image_tag "check.png"%>
-        </div> -->
+        </div>
+        <% end %>
       </div>
+
       <div class="card-dashboard" data-balloon-length="large" data-balloon="List your subscriptions & memberships so your delegate can cancel them." data-balloon-pos="up">
         <%= link_to "Subscriptions & Membership" %>
-       <!--   <div class="checked">
+      <% if current_user.subscriptions_complete? %>
+       <div class="checked">
           <%= image_tag "check.png"%>
-        </div> -->
+        </div>
+      <% end %>
       </div>
+
       <div class="card-dashboard" data-balloon-length="large" data-balloon="Upload important document & leave the contact details of your notary for your delegate" data-balloon-pos="up">
         <%= link_to "My Will" %>
-        <!--  <div class="checked">
+        <% if current_user.my_will_complete? %>
+        <div class="checked">
           <%= image_tag "check.png"%>
-        </div> -->
+        </div>
+        <% end %>
       </div>
     </div>
   </section>
