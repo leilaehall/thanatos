@@ -1,7 +1,7 @@
 .triangle-check {
     position: absolute;
     top: 178%;
-    left: 50%;
+    left: 45%;
     width: 0;
     height: 0;
     border-left: 49px solid transparent;
@@ -12,7 +12,18 @@
 .triangle-check-white {
     position: absolute;
     top: 93%;
-    left: 50%;
+    left: 45%;
+    width: 0;
+    height: 0;
+    border-left: 49px solid transparent;
+    border-right: 49px solid transparent;
+    border-top: 52px solid #F4F4F4;
+}
+
+.triangle-check-white-2 {
+    position: absolute;
+    top: 263%;
+    left: 45%;
     width: 0;
     height: 0;
     border-left: 49px solid transparent;

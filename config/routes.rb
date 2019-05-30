@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'preferences/basics'
+  get 'preferences/ceremony'
   root to: 'pages#home'
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
 
   resources :users
   get '/dashboard', to: 'dashboard#index'
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   resources :delegates, only: [:index, :create, :edit, :destroy]
   resources :companies, only: [:index, :show, :update]
   resources :preferences, only: [:create, :update] do
-    member do
+    collection do
       get 'basics'
       get 'ceremony'
     end
