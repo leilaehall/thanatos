@@ -6,5 +6,18 @@ class CompaniesController < ApplicationController
     else
       @companies = Company.all
     end
+
+    @markers = @companies.map do |company|
+      {
+        lat: company.latitude,
+        lng: company.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { company: company })
+      }
+    end
+  end
+
+  def show
+    @company = Company.find(params[:id])
+
   end
 end
