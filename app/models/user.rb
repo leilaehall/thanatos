@@ -11,4 +11,45 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+# SET UP CONDITIONS FOR DASHBOARD COMPLETION HERE !
+
+  def delegates_complete?
+    self.delegates.any?
+  end
+
+  def basics_complete?
+    true
+  end
+
+  def ceremony_complete?
+    true
+  end
+
+  def business_selection_complete?
+    true
+  end
+
+  def messages_complete?
+    true
+  end
+
+  def social_media_complete?
+    false
+  end
+
+  def banking_complete?
+    false
+  end
+
+  def insurance_complete?
+    false
+  end
+
+  def subscriptions_complete?
+    false
+  end
+
+  def my_will_complete?
+    false
+  end
 end
