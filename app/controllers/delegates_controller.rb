@@ -19,6 +19,8 @@ class DelegatesController < ApplicationController
 
     if @delegate.save
       flash[:notice] = "Your delegate has been successfully created"
+      mail = DelegateMailer.with(delegate: @delegate, token: @delegate.confirm_token).confirm
+      mail.deliver_now
       redirect_to delegates_path
     else
       render :new
@@ -37,8 +39,19 @@ class DelegatesController < ApplicationController
       :first_name,
       :last_name,
       :email,
+      :phone_number,
       :relationship,
       :user
     )
+  end
+
+  def confirm_email
+    raise
+    @delegate = Delegate.find_by_confirm_token(params[:token])
+    if @delegate.present?
+      @delegate.update(email_confirmed: true)
+      @delegate.save
+      flash[:success] = "#{delegate.first_name} has confirmed themselves as your delegate."
+    end
   end
 end

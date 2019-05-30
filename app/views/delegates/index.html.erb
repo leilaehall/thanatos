@@ -1,5 +1,15 @@
 <div class="container">
   <div class="row">
+    <div class="col-12 text-center">
+      <br>
+      <div class="head-delegate">
+        <h1><strong><%= current_user.first_name %>'s Delegates</strong></h1>
+        <br>
+        <h4>Delegates are individuals you entrust with the information you have given to Thanatos. They are responsible for ensuring your wishes are put in place. The choice of individual is of course up to you - perhaps a family member or close friend.</h4>
+        <br>
+        <h4>Your chosen delegate will be notified by email and asked to confirm. Upon confirmtion, we will notify you here.</h4>
+      </div>
+    </div>
     <div class="col-12 col-lg-8">
       <div class="form-wrapper-delegate">
         <div class="form-container-delegate">
@@ -43,6 +53,7 @@
           <% end %>
         </div>
       </div>
+            <%= link_to "⬅️ DASHBOARD", dashboard_path, class: "dashboard-button-delegate" %>
     </div>
     <div class="col-12 col-lg-4">
       <div class="delegates-card-container">
