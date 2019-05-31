@@ -54,7 +54,7 @@ companies_attributes = [
     name: "Ursula's Undertakers",
     address: 'King Street, Twickenham, London, TW1',
     company_email: 'timetodie1978@gmail.com',
-    description: 'Ready to take care of your dead carcass',
+    description: 'Ready to take care of your carcass',
     category: 'funeral home',
     logo: File.open(Rails.root.join("db/fixtures/companies/funeralhome1.jpg"))
   },
@@ -76,8 +76,8 @@ companies_attributes = [
   },
   {
     name: "Freddie's Flowers",
-    address: 'Royal Parade, Richmond, TW9 3QD',
-    company_email: 'hello@gmail.com',
+    address: 'Seymour rd, Hampton Wick, KT1',
+    company_email: 'hopeyoudie@gmail.com',
     description: 'Whish you could be alive to see how beautifull the flowers will look at your funeral',
     category: 'florist',
     logo: File.open(Rails.root.join("db/fixtures/companies/florist1.jpg"))
@@ -86,7 +86,7 @@ companies_attributes = [
     name: "Cathy's Coffins",
     address: 'Church Street, Twickenham, TW1',
     company_email: 'rest_in_peace_baby@gmail.com',
-    description: 'We will warm your cold body with a wooden jacket ;)',
+    description: 'We will warm your cold body with a wooden jacket',
     category: 'funeral home',
     logo: File.open(Rails.root.join("db/fixtures/companies/funeralhome2.jpg"))
   }
