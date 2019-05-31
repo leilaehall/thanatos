@@ -1,0 +1,43 @@
+
+.upper {
+  margin-top: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: center;
+}
+
+.upper h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: #2C89B1
+}
+
+.upper h4 {
+ color: #848080;
+ padding-left: 40px;
+ padding-right: 40px;
+}
+
+.cards-docu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 13px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.card-docu {
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  height: 200px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
