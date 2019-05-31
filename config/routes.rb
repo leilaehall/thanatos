@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :preferences, only: [:create, :update] do
     collection do
       get 'basics'
-      get 'ceremony'
+      get 'funeral'
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
