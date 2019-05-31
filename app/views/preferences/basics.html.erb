@@ -1,4 +1,37 @@
-<h1>DO YOU WANT TO BE BURRIED OR WHAT ?</h1>
-<p>Find me in app/views/preferences/basics.html.erb</p>
+
+<div class="upper">
+  <h2>Basics:</h2>
+  <h2>Your wishes for body disposal process & pre-ceremony</h2>
+  <br>
+  <h4>By filling our the simple forms below, your delegate(s) will know exactly what your wishes are, in the following hours of your death.</h4>
+</div>
+<br>
+<br>
 
 
+
+<%= button_to "⬅️ DASHBOARD", dashboard_path, class: "dashboard-button-delegate" %>
+</div>
+
+<div class="upper">
+  <h4><strong>Not sure yet ?</strong> Check-out the documentation links to make your choice.</h4>
+</div>
+<br>
+
+<div class="cards-docu">
+  <div class="card-docu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'ground.jpg' %>)" >
+    Burrial
+  </div>
+  <div class="card-docu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'urn.jpg' %>)">
+    Cremation
+  </div>
+  <div class="card-docu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'cryo.jpg' %>)">
+    Cryopreservation
+  </div>
+  <div class="card-docu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'science.jpg' %>)">
+    Give your body to science
+  </div>
+  <div class="card-docu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'organ.jpg' %>)">
+    Organ donation
+  </div>
+</div>

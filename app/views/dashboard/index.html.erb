@@ -55,7 +55,7 @@
       </div>
 
       <div class="card-dashboard" data-balloon-length="large" data-balloon="Your detailed wishes for your funeral ceremony" data-balloon-pos="up">
-        <%= link_to "Ceremony Preferences", ceremony_preferences_path %>
+        <%= link_to "Ceremony Preferences", funeral_preferences_path %>
          <% if current_user.ceremony_complete? %>
          <div class="checked">
           <%= image_tag "check.png"%>
