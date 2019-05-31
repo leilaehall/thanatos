@@ -1,41 +1,40 @@
 <div class="main-view-container">
   <div class="cards-container">
 
-    <div>
 
-    </div>
 
-      <div class="search-bar">
       <%= form_tag companies_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a company"
-        %>
-        <%= button_tag "SEARCH", class:"get-started-button search-bar-btn"%>
+        <div class="search-form-control form-group">
+          <input class="form-control string required" type="text" name="query" id="search_query" />
+          <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
       <% end %>
-      </div>
+
 
 
       <div class="company-cards">
         <% @companies.each do |company| %>
-          <div class="card-company">
-            <img src="https://cdn3.volusion.com/pfevm.nseys/v/vspfiles/photos/custom-painted-casket-2.gif">
-            <div class="card-company-infos">
-              <div>
-                <h2><%= link_to company.name, company_path(company)%></h2>
-                <p><%= company.address %></p>
-                <p><strong><%= company.category %></strong>
-                </p>
-              </div>
+        <% pref = company.company_preferences.any? {|preference| preference.funeral_preference.user == current_user} %>
+        <div class="card-company <%=  "selected-item" if pref  %>">
+          <img src="https://cdn3.volusion.com/pfevm.nseys/v/vspfiles/photos/custom-painted-casket-2.gif">
+          <div class="card-company-infos">
+            <div>
+              <img src="https://i.kym-cdn.com/photos/images/original/000/848/178/9f9.png" class="hidden-image <%=  "selected-image" if pref  %>">
+              <h2><%= link_to company.name, company_path(company)%></h2>
+              <p><%= company.address %></p>
+              <p><strong><%= company.category %></strong>
+              </p>
             </div>
           </div>
+        </div>
         <% end %>
       </div>
 
-  </div>
+    </div>
 
-  <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
   </div>
 

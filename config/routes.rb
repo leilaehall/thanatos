@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       get 'ceremony'
     end
   end
+
+  resources :companies_preference, only: [:destroy, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 # templates to be added if possible
