@@ -25,8 +25,8 @@ class MessagesController < ApplicationController
 
     if @message.save
       flash[:notice] = "Your message has been successfully created"
-      mail = MessageMailer.with(message: @message, token: @message.confirm_token).confirm
-      mail.deliver_now
+      message = MessageMailer.with(message: @message, recipient: @message.recipient).send_message
+      message.deliver_now
       redirect_to messages_path
     else
       render :new
