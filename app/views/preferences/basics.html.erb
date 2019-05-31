@@ -1,2 +1,58 @@
-<h1>DO YOU WANT TO BE BURRIED OR WHAT ?</h1>
-<p>Find me in app/views/preferences/basics.html.erb</p>
+
+<div class="upper">
+  <h2>Basics:</h2>
+  <h2>Your wishes for body disposal process & pre-ceremony</h2>
+  <br>
+  <h4>By filling our the simple form below, your delegate(s) will know exactly what your wishes are, in the following hours of you passing away.</h4>
+</div>
+
+<div class="col-7 alignment">
+  <%= simple_form_for @preference, url: funeral_preferences_path do |f| %>
+  <div class="form-wrapper">
+    <div class="form-container">
+      <div class="form-header">
+        <h3 class="form-title">PRE-CEREMONY PREFERENCES</h2>
+          <span class="line"></span>
+        </div>
+        <div class="form-body">
+          <div class="form-inputs">
+            <div class="nameinput">
+              <%= f.input :process, collection: ["Burrial", "Cremation", "Cryopreservation", "Give my body to Science", "Organ Donation"] %>
+              <%= f.input :display, collection: ["Authorize body display prior ceremony", "Not authorization for body display"] %>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+    <%= button_to "SAVE", preferences_path, class: "dashboard-button-delegate" %>
+    </div>
+    <% end %>
+    <div>
+    <%= link_to "⬅️ DASHBOARD", dashboard_path, class: "dashboard-button-delegate" %>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="upper">
+    <h4><strong>Not sure yet ?</strong> Check-out the documentation links to make your choice.</h4>
+  </div>
+  <br>
+
+  <div class="cards-docu">
+    <div class="card-docu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'ground.jpg' %>)" >
+      Burrial
+    </div>
+    <div class="card-docu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'urn.jpg' %>)">
+      Cremation
+    </div>
+    <div class="card-docu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'cryo.jpg' %>)">
+      Cryopreservation
+    </div>
+    <div class="card-docu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'science.jpg' %>)">
+      Give your body to science
+    </div>
+    <div class="card-docu" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'organ.jpg' %>)">
+      Organ donation
+    </div>
+  </div>

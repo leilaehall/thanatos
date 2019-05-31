@@ -1,17 +1,18 @@
 .wrapper-blue {
+  height: 100vh;
   background-color: #2C89B1;
   margin-top: 50px;
   padding-bottom: 40px;
-  padding-top: 35px;
+  padding-top: 20px;
 }
 
 #situation .wrapper-text-left {
-  height: 100%;
+  // height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 40px;
   color: white;
-  font-size: 26px;
+  font-size: 20px;
 }
 #situation .wrapper-text-right {
   height: 100%;
@@ -19,21 +20,21 @@
   flex-direction: column;
   justify-content: center;
   color: white;
-  font-size: 26px;
+  font-size: 20px;
 }
 
 #situation .image-right {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: contain;
   margin-left: 40px;
 }
 
 #situation .image-left {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: contain;
-  margin-left: -27px;
+  // margin-left: -5px;
   object-position: left;
 }
 
@@ -42,7 +43,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 300px;
+  min-height: 250px;
 
 }
 
