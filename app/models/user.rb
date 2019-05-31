@@ -18,19 +18,19 @@ class User < ApplicationRecord
   end
 
   def basics_complete?
-    true
+    false
   end
 
   def ceremony_complete?
-    true
+    false
   end
 
   def business_selection_complete?
-    true
+    false
   end
 
   def messages_complete?
-    true
+    false
   end
 
   def social_media_complete?
