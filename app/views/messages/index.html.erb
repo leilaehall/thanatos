@@ -1,1 +1,101 @@
-<h1>Whatssssupppp</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <div class="head">
+        <br>
+        <h1>
+          <strong> Personal Messages Pages </strong>
+        </h1>
+        <br>
+        <h5>
+          The Personal Messages Page allows you to share personal messages with family and friends on a preferred day after your death. <br>
+          <br>
+          You can send a birthday message to your loved one on their birthday or share your thoughts on matters you never had the chance to share. <br>
+          <br>
+          By filling in the form below, we will automatically send the message on the selected date.
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-10 offset-lg-1">
+  <div class="form-wrapper-delegate">
+    <div class="form-container-delegate">
+      <div class="form-header-delegate">
+        <h2 class="form-title-delegate">CREATE MESSAGE</h2>
+        <span class="line"></span>
+      </div>
+      <div class="form-body-delegate">
+        <%= simple_form_for @message do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs-delegate">
+          <%= f.input :recipient,
+          required: true,
+          autofocus: true,
+          input_html: { autocomplete: "recipient", placeholder:"Recipient's e-mail address"} %>
+          <%= f.input :subject,
+          required: true,
+          autofocus: true,
+          input_html: { autocomplete: "subject", placeholder:"Subject of the message"} %>
+
+          <%= f.input :content,
+          required: true,
+          autofocus: true,
+          input_html: { autocomplete: "content", placeholder:"What would you like to share with the recipient"} %>
+
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Sending options</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                  <label class="form-check-label" for="gridRadios1">
+                    Send on a specific date
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                  <label class="form-check-label" for="gridRadios2">
+                    Send on specific amount of days after your death
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <div id="days-after-death">
+            </div>
+            <%= f.input :send_date,
+            required: true,
+            autofocus: true,
+            input_html: { autocomplete: "send_date", class: "datepicker", placeholder:"Select a date"},
+            wrapper_html: { id: "send_date_wrapper" } %>
+
+            <%= f.input :delay_period,
+            required: true,
+            autofocus: true,
+            collection: ["One week", "One Month", "Half a year", "One Year"],
+            input_html: { autocomplete: "delay_period", placeholder:"Delay period"},
+            wrapper_html: { id: "delay_period_wrapper", hidden: true } %>
+          </div>
+        </div>
+      </div>
+      <div>
+        <%= f.submit "SEND", class: "get-started-button-delegate" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "⬅️ DASHBOARD", dashboard_path, class: "dashboard-button-delegate" %>
+</div>
+
+<script>
+  document.getElementById("gridRadios1").addEventListener("click", function(e) {
+    document.getElementById("send_date_wrapper").hidden = false;
+    document.getElementById("delay_period_wrapper").hidden = true;
+  })
+    document.getElementById("gridRadios2").addEventListener("click", function(e) {
+    document.getElementById("send_date_wrapper").hidden = true;
+    document.getElementById("delay_period_wrapper").hidden = false;
+  })
+
+</script>
