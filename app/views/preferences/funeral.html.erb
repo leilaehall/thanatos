@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <br>
+      <div class="head-delegate">
+        <h1><strong><%= current_user.first_name %>'s Preferences</strong></h1>
+        <br>
+        <h4>Here, you have the opportunity to identify your preferences for your ceremony.</h4>
+        <br>
+        <h4>Please work your way through the options shown. If you have any additional requests, please feel free to leave these in the 'comments' section below.</h4>
+      </div>
+    </div>
+
+        <div class="col-12">
+          <%= simple_form_for @preference, url: preference_path(@preference) do |f| %>
+          <div class="form-wrapper">
+          <div class="form-container">
+            <div class="form-header">
+              <h3 class="form-title">CEREMONY LOGISTICS</h2>
+                <span class="line"></span>
+              </div>
+              <div class="form-body">
+                <%= f.error_notification %>
+                <div class="form-inputs">
+                  <%= f.input :address,
+                  required: true,
+                  input_html: { autocomplete: "address" } %>
+                  <%= f.input :guest_list,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "guest_list" }%>
+                  <%= f.input :music,
+                  required: true,
+                  input_html: { autocomplete: "music" } %>
+                  <%= f.input :car,
+                  required: true,
+                  input_html: { autocomplete: "car" } %>
+                  <%= f.input :speaker,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "speaker"} %>
+                  <%= f.input :reading,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "reading"} %>
+                  <%= f.input :charity,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "charity"} %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-wrapper">
+            <div class="form-container">
+              <div class="form-header">
+                <h3 class="form-title">ADDITIONAL DETAILS</h2>
+                  <span class="line"></span>
+                </div>
+                <div class="form-body">
+                  <div class="form-inputs">
+                    <div class="nameinput">
+                      <%= f.input :dress %>
+                      <%= f.input :hairstyle %>
+                      <%= f.input :make_up %>
+                      <%= f.input :embalming, as: :select %>
+                    </div>
+                    <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <%= f.submit "CONFIRM", class: "dashboard-button-delegate" %>
+          <% end %>
+          <%= link_to "⬅️ DASHBOARD", dashboard_path, class: "dashboard-button-delegate" %>
+
+    </div>
+  </div>
+

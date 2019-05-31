@@ -89,6 +89,10 @@
   right: 10px;
   color: #7C7A7A;
   font-weight: 600;
+  &:hover {
+  filter: brightness(92%);
+  text-decoration: none;
+  }
 }
 .card-update-button {
   top: 10px;
@@ -98,6 +102,10 @@
   position: relative;
   margin-bottom: -45px;
   margin-right: -7px;
+  &:hover {
+  filter: brightness(92%);
+  text-decoration: none;
+  }
 }
 .get-started-button-delegate {
   width: 150px;
