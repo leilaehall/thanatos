@@ -53,7 +53,7 @@
           <% end %>
         </div>
       </div>
-            <%= button_to "⬅️ DASHBOARD", dashboard_path, class: "dashboard-button-delegate" %>
+            <%= link_to "⬅️ DASHBOARD", dashboard_path, class: "dashboard-button-delegate" %>
     </div>
     <div class="col-12 col-lg-4">
       <div class="delegates-card-container">
@@ -65,7 +65,7 @@
             <p><%= delegate.phone_number %></p>
             <p><%= delegate.relationship %></p>
           </div>
-          <%= link_to "UPDATE", delegate, method: :update, remote: true, class: "card-update-button" %>
+          <%= link_to "PENDING", delegate, method: :update, remote: true, class: "card-update-button" %>
           <%= link_to "X", delegate, method: :delete, remote: true, class: "card-delete-button" %>
         </div>
         <% end %>

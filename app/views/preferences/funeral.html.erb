@@ -11,8 +11,8 @@
       </div>
     </div>
 
-        <div class="col-8">
-          <%= simple_form_for @preference, url: funeral_preferences_path do |f| %>
+        <div class="col-12">
+          <%= simple_form_for @preference, url: preferences_path do |f| %>
           <div class="form-wrapper">
           <div class="form-container">
             <div class="form-header">
@@ -70,9 +70,9 @@
                 </div>
               </div>
             </div>
+          <%= f.submit "CONFIRM", class: "dashboard-button-delegate" %>
           <% end %>
-                    <%= button_to "CONFIRM", dashboard_path, class: "dashboard-button-delegate" %>
-          <%= button_to "⬅️ DASHBOARD", dashboard_path, class: "dashboard-button-delegate" %>
+          <%= link_to "⬅️ DASHBOARD", dashboard_path, class: "dashboard-button-delegate"%>
 
     </div>
   </div>
