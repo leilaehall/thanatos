@@ -6,19 +6,21 @@ class PreferencesController < ApplicationController
   end
 
   def funeral
-    
+
   end
 
-  private
-
-  def set_preference
-    @preference = current_user.funeral_preferences
-    if @preference.empty?
-      @preference = FuneralPreference.new
+  def update
+    @preference = current_user.funeral_preferences.first
+    @preference.update(preference_params)
+    if @preference.save
+      flash[:notice] = "Your preference have been saved."
+      redirect_to dashboard_path
     else
-      @preference = @preference.first
+      render :new
     end
+
   end
+
 
   def create
     @preference = FuneralPreference.new(preference_params)
@@ -34,12 +36,21 @@ class PreferencesController < ApplicationController
 
   private
 
+  def set_preference
+    @preference = current_user.funeral_preferences
+    if @preference.empty?
+      @preference = FuneralPreference.new
+    else
+      @preference = @preference.first
+    end
+  end
+
   def preference_params
     params.require(:funeral_preference).permit(
       :address,
       :guest_list,
       :music,
-      :card,
+      :car,
       :speaker,
       :reading,
       :charity,

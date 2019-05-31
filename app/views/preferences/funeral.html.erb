@@ -12,7 +12,7 @@
     </div>
 
         <div class="col-12">
-          <%= simple_form_for @preference, url: preferences_path do |f| %>
+          <%= simple_form_for @preference, url: preference_path(@preference) do |f| %>
           <div class="form-wrapper">
           <div class="form-container">
             <div class="form-header">
@@ -63,7 +63,7 @@
                       <%= f.input :dress %>
                       <%= f.input :hairstyle %>
                       <%= f.input :make_up %>
-                      <%= f.input :embalming, collection: ["yes", "no"] %>
+                      <%= f.input :embalming, as: :select %>
                     </div>
                     <br>
                   </div>
