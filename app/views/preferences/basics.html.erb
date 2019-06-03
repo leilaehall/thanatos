@@ -7,7 +7,7 @@
 </div>
 
 <div class="col-7 alignment">
-  <%= simple_form_for @preference, url: preferences_path do |f| %>
+  <%= simple_form_for @preference, url: (@preference.new_record? ? preferences_path : preference_path(@preference)) do |f| %>
   <div class="form-wrapper">
     <div class="form-container">
       <div class="form-header">

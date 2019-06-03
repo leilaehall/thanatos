@@ -24,11 +24,11 @@ class User < ApplicationRecord
   end
 
   def ceremony_complete?
-    self.funeral_preferences.any? && !self.funeral_preferences[0].process.blank?
+    self.funeral_preferences.any? && !self.funeral_preferences[0].embalming.blank?
   end
 
   def business_selection_complete?
-    false
+    self.company_preferences.any?
     # IF ANYTHING IS ENTERED AS COMPANY PREFERENCE, VALIDATE
   end
 
@@ -37,7 +37,7 @@ class User < ApplicationRecord
   end
 
   def social_media_complete?
-    false
+    self.social_platforms.any?
   end
 
   def banking_complete?

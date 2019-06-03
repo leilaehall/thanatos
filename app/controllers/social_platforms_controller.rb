@@ -4,6 +4,15 @@ class SocialPlatformsController < ApplicationController
   end
 
   def create
+    @social_platform = SocialPlatform.new(social_platform_params)
+    @social_platform.user = current_user
+
+    if @social_platform.save
+      flash[:notice] = "Your preference have been saved."
+      redirect_to dashboard_path
+    else
+      render :new
+    end
   end
 
   def update
