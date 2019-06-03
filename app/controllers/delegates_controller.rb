@@ -21,9 +21,15 @@ class DelegatesController < ApplicationController
       flash[:notice] = "Your delegate has been successfully created"
       mail = DelegateMailer.with(delegate: @delegate, token: @delegate.confirm_token).confirm
       mail.deliver_now
-      redirect_to delegates_path
+      respond_to do |format|
+        format.html { redirect_to delegates_path }
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js
+      end
     end
   end
 
@@ -46,7 +52,6 @@ class DelegatesController < ApplicationController
   end
 
   def confirm_email
-    raise
     @delegate = Delegate.find_by_confirm_token(params[:token])
     if @delegate.present?
       @delegate.update(email_confirmed: true)

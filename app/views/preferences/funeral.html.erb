@@ -5,7 +5,7 @@
       <div class="head-delegate">
         <h1><strong><%= current_user.first_name %>'s Preferences</strong></h1>
         <br>
-        <h4>Here, you have the opportunity to identify your preferences for your ceremony.</h4>
+        <h4>Here, you have the opportunity to indicate your preferences for your ceremony.</h4>
         <br>
         <h4>Please work your way through the options shown. If you have any additional requests, please feel free to leave these in the 'comments' section below.</h4>
       </div>
@@ -43,10 +43,14 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "reading"} %>
-                  <%= f.input :charity,
+                  <%= f.input :collection_for_charity,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "charity"} %>
+                  input_html: { autocomplete: "collection_for_charity"} %>
+                  <%= f.input :further_comments,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "further_comments"} %>
                 </div>
               </div>
             </div>
