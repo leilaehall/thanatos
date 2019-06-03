@@ -1,0 +1,57 @@
+        <%= simple_form_for @message, remote: true do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs-delegate">
+          <%= f.input :recipient,
+          required: true,
+          autofocus: true,
+          input_html: { autocomplete: "recipient", placeholder:"Recipient's e-mail address"} %>
+          <%= f.input :subject,
+          required: true,
+          autofocus: true,
+          input_html: { autocomplete: "subject", placeholder:"Subject of the message"} %>
+
+          <%= f.input :content,
+          required: true,
+          as: :text,
+          autofocus: true,
+          input_html: { autocomplete: "content", placeholder:"What would you like to share with the recipient"} %>
+
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Sending options</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                  <label class="form-check-label" for="gridRadios1">
+                    Send on a specific date
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                  <label class="form-check-label" for="gridRadios2">
+                    Send on specific amount of days after your death
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <div id="days-after-death">
+            </div>
+            <%= f.input :send_date,
+            required: true,
+            autofocus: true,
+            input_html: { autocomplete: "send_date", class: "datepicker", placeholder:"Select a date"},
+            wrapper_html: { id: "send_date_wrapper" } %>
+
+            <%= f.input :delay_period,
+            required: true,
+            autofocus: true,
+            collection: [["7", "One week"], ["30", "One Month"], ["182", "Half a year"], ["365", "One Year"]],
+            label_method: :second, value_method: :first,
+            input_html: { autocomplete: "delay_period", placeholder:"Delay period"},
+            wrapper_html: { id: "delay_period_wrapper", hidden: true } %>
+          </div>
+      </div>
+      <div>
+        <%= f.submit "SAVE", class: "get-started-button-delegate" %>
+      </div>
+      <% end %>

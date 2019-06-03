@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :users
   get '/dashboard', to: 'dashboard#index'
-  resources :messages, only: [:index, :create]
+  resources :messages, only: [:index, :create, :destroy]
 
   resources :delegates, only: [:index, :create, :edit, :destroy] do
     member do
