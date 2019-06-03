@@ -1,0 +1,32 @@
+           <%= simple_form_for @delegate, remote: true do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs-delegate">
+              <div class="nameinput-delegate">
+                <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "first_name" } %>
+
+                <%= f.input :last_name,
+                required: true,
+                input_html: { autocomplete: "last_name" } %>
+              </div>
+
+              <%= f.input :email,
+              required: true,
+              input_html: { autocomplete: "email" } %>
+
+              <%= f.input :phone_number,
+              required: true,
+              input_html: { autocomplete: "phone_number"} %>
+
+              <%= f.input :relationship,
+              required: true,
+              collection: ["Spouse", "Partner", "Father", "Mother", "Son", "Daughter", "Brother", "Sister", "Cousin", "Friend", "Lawyer", "Other"],
+              autofocus: true,
+              input_html: { autocomplete: "relationship" } %>
+          </div>
+          <div>
+            <%= f.submit "CONFIRM", class: "get-started-button-delegate" %>
+          </div>
+          <% end %>

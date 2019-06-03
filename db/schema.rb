@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_095439) do
-
+ActiveRecord::Schema.define(version: 2019_06_03_110317) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_095439) do
     t.float "longitude"
     t.string "company_email"
     t.string "description"
+    t.string "phone"
   end
 
   create_table "company_preferences", force: :cascade do |t|
@@ -67,9 +67,10 @@ ActiveRecord::Schema.define(version: 2019_06_03_095439) do
     t.datetime "updated_at", null: false
     t.string "speaker"
     t.string "reading"
-    t.string "charity"
+    t.string "collection_for_charity"
     t.string "process"
     t.string "display"
+    t.string "further_comments"
     t.index ["user_id"], name: "index_funeral_preferences_on_user_id"
   end
 
@@ -117,6 +118,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_095439) do
     t.string "religion"
     t.string "address"
     t.string "scenario"
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

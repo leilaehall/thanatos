@@ -18,10 +18,12 @@
         <% @companies.each do |company| %>
         <% pref = company.company_preferences.any? {|preference| preference.funeral_preference.user == current_user} %>
         <div class="card-company <%=  "selected-item" if pref  %>">
-          <img src="https://cdn3.volusion.com/pfevm.nseys/v/vspfiles/photos/custom-painted-casket-2.gif">
+          <%= image_tag company.logo %>
           <div class="card-company-infos">
             <div>
-              <img src="https://i.kym-cdn.com/photos/images/original/000/848/178/9f9.png" class="hidden-image <%=  "selected-image" if pref  %>">
+              <% if pref %>
+              <%= image_tag 'check.png', class: "#{'selected-image' if pref}" %>
+              <% end %>
               <h2><%= link_to company.name, company_path(company)%></h2>
               <p><%= company.address %></p>
               <p><strong><%= company.category %></strong>

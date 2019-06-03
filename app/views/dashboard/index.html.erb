@@ -6,9 +6,9 @@
       <div class="head">
       <h2><strong>Welcome to your personal dashboard <%= current_user.first_name if current_user %>!</strong></h2>
       <br>
-      <h5>Your Thanatos dashboard <strong>helps you plan & organize</strong> : ensure all your important information is entered in each category on this page so we can securely pass it on to your delegate(s), after you go.</h5>
+      <h5>Your Thanatos dashboard <strong>helps you plan & organize</strong> : ensure all your important information is entered in each category on this page so we can securely pass it on to your legacy contact(s), after you go.</h5>
       <br>
-      <h5>Your listed wishes & sensitive information will <strong>only be accessible through an encrypted key given to your delegate(s)&#128274.</strong></h5>
+      <h5>Your listed wishes & sensitive information will <strong>only be accessible through an encrypted key given to your legacy contact(s)&#128274.</strong></h5>
       </div>
     </div>
   </div>
@@ -36,8 +36,8 @@
 
   <section>
     <div class="cards">
-      <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="Your delegate will inherit all of your dashboard data after you go." data-balloon-pos="up">
-        <%= link_to "Delegate(s)", delegates_path %>
+      <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="Your legacy contact will inherit all of your dashboard data after you go." data-balloon-pos="up">
+        <%= link_to "Legacy contact(s)", delegates_path %>
         <% if current_user.delegates_complete? %>
         <div class="checked">
           <%= image_tag "check.png"%>

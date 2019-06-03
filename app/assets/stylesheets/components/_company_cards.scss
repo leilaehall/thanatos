@@ -29,7 +29,6 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
   transition: background 0.3s ease;
 }
 
@@ -38,8 +37,8 @@
   color: white;
 }
 .cards-container{
-    width: 100%;
-    padding: 20px;
+  width: 100%;
+  padding: 20px;
 }
 .company-cards{
   grid-template-columns: 1fr 1fr;
@@ -48,11 +47,13 @@
 }
 
 .card-company {
+  position: relative;
+
   overflow: hidden;
-    background: white;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    position:relative;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  position:relative;
 
 }
 
@@ -74,7 +75,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
 }
 
 .card-company .card-company-infos a{
@@ -91,10 +91,11 @@
 }
 
 .selected-image{
-  height:100px;
-  width:100px;
-  position:absolute;
-  top: -225px;
-    left: 281px;
-    border-radius:50%;
+  height: 65px;
+  width: 65px;
+  position: absolute;
+  right: 4px;
+  top:4px;
+  border-radius: 50%;
+  background-color:white;
 }

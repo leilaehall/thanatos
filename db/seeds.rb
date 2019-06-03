@@ -43,52 +43,58 @@ p users
 puts 'Creating companies...'
 companies_attributes = [
   {
-    name: "Brenda's Bouquets",
+    name: "IterFlora",
     address: 'High Street, Hampton Wick, KT1',
-    company_email: 'niceflowers@gmail.com',
-    description: 'We sell flowers, buy them before you die',
+    company_email: 'iterflora@gmail.uk',
+    description: 'At this difficult time, we can at least make choosing, ordering and sending funeral flowers a little easier for you. Choose from our carefully selected range of classically beautiful funeral flowers and just let us know where we need to deliver them. ',
     category: 'florist',
-    logo: File.open(Rails.root.join("db/fixtures/companies/florist2.jpg"))
+    logo: "florist2.jpg",
+    phone: "+44 1632 988060"
   },
   {
-    name: "Ursula's Undertakers",
+    name: "Harrison Funeral Home",
     address: 'King Street, Twickenham, London, TW1',
-    company_email: 'timetodie1978@gmail.com',
-    description: 'Ready to take care of your carcass',
+    company_email: 'harrisonfuneralh@gmail.com',
+    description: 'HFH is designed specifically for the provision of funeral services and related functions including receptions. Its design is meant to ensure privacy to each family during every phase of their time at the funeral home. This includes arrangement consultation, visitation, funeral service and reception. Our facility is intended to be warm, open, airy and positive.',
     category: 'funeral home',
-    logo: File.open(Rails.root.join("db/fixtures/companies/funeralhome1.jpg"))
+    logo: "funeralhome1.jpg",
+    phone: "+44 1632 960777"
   },
   {
-    name: "Clifford's Classy Cars",
+    name: "Crystal Chauffeurs",
     address: 'St Margarets Road, Twickenham, TW1',
-    company_email: 'i_am_awesome_99@gmail.com',
-    description: 'Nice cars that will carry your dead body',
+    company_email: 'crystalchauffeurs@mail.uk',
+    description: 'We at Crystal Chauffeurs are willing to help you with any requirements  that’s you may have. With an understanding team we are certain to meet your requirements for the day.',
     category: 'car rental',
-    logo: File.open(Rails.root.join("db/fixtures/companies/car1.jpg"))
+    logo: "car1.jpg",
+    phone: "+44 1882 960068"
   },
   {
-    name: "Maggie's Motors",
+    name: "FuneralCar",
     address: 'High Street, Teddington, KT1',
-    company_email: 'fastandfurious@gmail.com',
-    description: 'Sweet cars',
+    company_email: 'funeralcar@mail.uk',
+    description: 'We deal exclusively with the motoring needs of the funeral industry and understand your unique needs. If you need assistance with finding the right funeral vehicle or associated parts, services or accessories then talk to us today.',
     category: 'car rental',
-    logo: File.open(Rails.root.join("db/fixtures/companies/car2.jpg"))
+    logo: "car2.jpg",
+    phone: "+44 1632 960066"
   },
   {
-    name: "Freddie's Flowers",
+    name: "Flowers for funerals",
     address: 'Seymour rd, Hampton Wick, KT1',
-    company_email: 'hopeyoudie@gmail.com',
-    description: 'Whish you could be alive to see how beautifull the flowers will look at your funeral',
+    company_email: 'flowersforfuneral@gmail.com',
+    description:'The tragic news that someone near or dear has passed will never come at a good time, but it is important you are able to send sympathy flowers to the family, friends, colleagues or loved ones to say you are thinking of them at what is most certainly a difficult time.',
     category: 'florist',
-    logo: File.open(Rails.root.join("db/fixtures/companies/florist1.jpg"))
+    logo: "florist1.jpg",
+    phone: "+44 1632 960999"
   },
   {
-    name: "Cathy's Coffins",
+    name: "Walker Funeral Home",
     address: 'Church Street, Twickenham, TW1',
-    company_email: 'rest_in_peace_baby@gmail.com',
-    description: 'We will warm your cold body with a wooden jacket',
+    company_email: 'walkerfh@gmail.com',
+    description: 'We invite you to browse through our site and learn about our firm, our family, and what services we can offer to you and your family. We are very proud of our tradition, our facilities, and the services that we provide. Please feel free to visit our website often, and if a question arises, do not hesitate to call on us. Blessing to each of you.',
     category: 'funeral home',
-    logo: File.open(Rails.root.join("db/fixtures/companies/funeralhome2.jpg"))
+    logo: "funeralhome2.jpg",
+    phone: "+44 1632 960068"
   }
 ]
 companies = Company.create!(companies_attributes)

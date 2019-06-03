@@ -26,6 +26,11 @@ Rails.application.routes.draw do
     end
   end
 
+  require "sidekiq/web" #delayed message sending
+  authenticate :user do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   resources :companies_preference, only: [:destroy, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

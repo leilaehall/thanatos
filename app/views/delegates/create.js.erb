@@ -1,0 +1,16 @@
+function refreshForm(innerHTML) {
+  const newDelegateForm = document.getElementById('new_delegate');
+  newDelegateForm.innerHTML = innerHTML;
+}
+
+function addDelegate(delegateHTML) {
+  const delegates = document.getElementById('delegates');
+  delegates.insertAdjacentHTML('beforeend', delegateHTML);
+}
+
+<% if @delegate.errors.any? %>
+  refreshForm('<%= j render "delegates/form", delegate: @delegate %>');
+  <% else %>
+  addDelegate('<%= j render "delegates/card", delegate: @delegate %>');
+  refreshForm('<%= j render "delegates/form", delegate: @delegate %>');
+  <% end %>

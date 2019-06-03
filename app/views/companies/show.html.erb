@@ -1,34 +1,35 @@
-
-
-
-<div class="company-banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://www.fairfuneralhome.com/slideshow-responsive/3-Funeral-Home-Eden.jpg);">
+<div class="company-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.pexels.com/photos/917076/pexels-photo-917076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-size: cover;">
   <div class="company-container">
-    <h2><%= @company.category %>:</h2>
-    <h1><strong><%= @company.name %></strong></h1>
-    <p><%= @company.address %></p>
-    <h3><strong>"<%= @company.description %></strong>"</h3>
-    <div class="paragraph-show">
-      <p>Contact us:</p>
-      <p><%= @company.company_email %></p>
+    <div class="company-info">
+      <h2><%= @company.category %>:</h2>
+      <h1><strong><%= @company.name %></strong></h1>
+      <p><%= @company.address %></p>
+      <div class="description">
+        <p>About us:<p>
+          <h3><strong>"<%= @company.description %></strong>"</h3>
+        </div>
+      </div>
+      <div class="paragraph-show">
+        <p>Contact us:</p>
+        <p><%= @company.company_email %></p>
+        <p><%= @company.phone %></p>
+        <p class="website">www.<%= @company.name %>.uk</p>
+      </div>
     </div>
     <div>
       <% if @set_company_preference %>
-      <%= button_to "Delete", companies_preference_path(@set_company_preference),
+      <%= button_to "Delete Preference", companies_preference_path(@set_company_preference),
       method: :delete,
       data: { confirm: "Are you sure?" },
-      class:"get-started-button company-button"%>
+      class: "get-started-button company-button"%>
       <% else %>
       <%= simple_form_for :companies_preference, url: companies_preference_index_path, method: :post do |f| %>
       <%= f.hidden_field :company_id, value: @company.id %>
-      <%= f.submit class: "get-started-button company-button" %>
+      <%= f.submit "Select Company",  class: "get-started-button company-button" %>
       <% end %>
       <% end %>
-    </div>
-    <div>
-
     </div>
   </div>
-</div>
 
 
 

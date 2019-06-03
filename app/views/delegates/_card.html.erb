@@ -1,0 +1,10 @@
+ <div class="card-delegate" data-delegate-id="<%= delegate.id %>">
+          <h2><%= delegate.first_name %> <%= delegate.last_name %></h2>
+          <div class="card-infos-delegate">
+            <p><%= delegate.email%></p>
+            <p><%= delegate.phone_number %></p>
+            <p><%= delegate.relationship %></p>
+          </div>
+          <%= link_to "PENDING", delegate, method: :update, remote: true, class: "card-update-button" %>
+          <%= link_to "X", delegate, method: :delete, remote: true, class: "card-delete-button" %>
+        </div>
