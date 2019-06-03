@@ -20,13 +20,15 @@ class MessagesController < ApplicationController
 
     if @message.save
       flash[:notice] = "Your message has been successfully created"
+
       if params[:gridRadios] == "option1"
-        to_send_at = params[:delay_period]
+        to_send_at = Date.strptime(message_params[:send_date], "%m/%d/%Y")
       elsif params[:gridRadios] == "option2"
-        to_send_at = params[:send_date]
+        to_send_at = Date.today + message_params[:delay_period].to_i
       end
-      message = MessageMailer.with(message: @message, recipient: @message.recipient).send_message
-      message.deliver_now
+
+      MessageJob.set(wait_until: to_send_at.to_s).perform_later(@message.id)
+
       redirect_to messages_path
     else
       render :new
