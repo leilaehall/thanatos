@@ -1,12 +1,10 @@
 class User < ApplicationRecord
-  after_create :set_funeral_preference
-  # REMOVE THIS WHEN YOU'RE MAKING THE FUNERAL PREFERENFCE FORMS 'BASICS' & 'CEREMONY'
-
   has_many :delegates, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :funeral_preferences, dependent: :destroy
   has_many :company_preferences, through: :funeral_preferences
   has_many :templates
+  has_many :social_platforms
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true
@@ -17,25 +15,21 @@ class User < ApplicationRecord
 
 # SET UP CONDITIONS FOR DASHBOARD COMPLETION HERE !
 
-
-  def set_funeral_preference
-    self.funeral_preferences << FuneralPreference.create
-  end
-
   def delegates_complete?
     self.delegates.any?
   end
 
   def basics_complete?
-    !self.funeral_preferences[0].process.empty?
+    self.funeral_preferences.any? && !self.funeral_preferences[0].process.nil?
   end
 
   def ceremony_complete?
-    !self.funeral_preferences[0].embalming.blank?
+    self.funeral_preferences.any? && !self.funeral_preferences[0].process.blank?
   end
 
   def business_selection_complete?
     false
+    # IF ANYTHING IS ENTERED AS COMPANY PREFERENCE, VALIDATE
   end
 
   def messages_complete?
