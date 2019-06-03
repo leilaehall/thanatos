@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'preferences/ceremony'
   root to: 'pages#home'
   devise_for :users, controllers: { registrations: "registrations" }
+  %w( 404 422 500 503 ).each do |code|
+    get code, :to => "errors#show", :code => code
+  end
 
   resources :users
   get '/dashboard', to: 'dashboard#index'
