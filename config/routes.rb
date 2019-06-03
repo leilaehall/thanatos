@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   end
 
   require "sidekiq/web" #delayed message sending
-  authenticate :user, lambda { |u| u.admin } do
+  authenticate :user do
     mount Sidekiq::Web => '/sidekiq'
   end
 
