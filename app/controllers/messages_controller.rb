@@ -14,12 +14,15 @@ class MessagesController < ApplicationController
   end
 
   def create
-
     @message = Message.new(message_params)
     @message.user = current_user
 
     if @message.save
       flash[:notice] = "Your message has been successfully created"
+      respond_to do |format|
+        format.html { redirect_to messages_path }
+        format.js
+      end
 
       if params[:gridRadios] == "option1"
         to_send_at = Date.strptime(message_params[:send_date], "%m/%d/%Y")
@@ -29,9 +32,11 @@ class MessagesController < ApplicationController
 
       MessageJob.set(wait_until: to_send_at.to_s).perform_later(@message.id)
 
-      redirect_to messages_path
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js
+      end
     end
   end
 
@@ -61,5 +66,4 @@ class MessagesController < ApplicationController
       flash[:success] = "Message has been made"
     end
   end
-
 end
