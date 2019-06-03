@@ -16,6 +16,8 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'sidekiq' #for delayed message sending
+gem 'sidekiq-failures', '~> 1.0' #for delayed message sending
 
 # OWN GEMS
 gem 'letter_opener', group: :development
