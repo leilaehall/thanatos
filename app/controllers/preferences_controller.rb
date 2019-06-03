@@ -53,7 +53,7 @@ class PreferencesController < ApplicationController
       :car,
       :speaker,
       :reading,
-      :charity,
+      :collection_for_charity,
       :dress,
       :hairstyle,
       :make_up,

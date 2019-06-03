@@ -153,7 +153,7 @@ funeral_preferences_attributes = [
     make_up: 'some',
     speaker: 'Tessa Jenkins',
     reading: 'Millie Jenkins',
-    charity: 'Dementia Awareness',
+    collection_for_charity: 'Dementia Awareness',
     user: users[0]
   },
   {
@@ -169,7 +169,7 @@ funeral_preferences_attributes = [
     make_up: 'none',
     speaker: 'Mark Wright',
     reading: 'Susan Forshaw',
-    charity: 'Breast Cancer Awareness',
+    collection_for_charity: 'Breast Cancer Awareness',
     user_id: users[1].id
   },
   {
@@ -185,7 +185,7 @@ funeral_preferences_attributes = [
     make_up: 'red lipstick',
     speaker: 'Bill Clifford',
     reading: 'Martin Pullman',
-    charity: 'Unicef',
+    collection_for_charity: 'Unicef',
     user: users[2]
   }
 ]
