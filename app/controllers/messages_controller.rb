@@ -14,19 +14,21 @@ class MessagesController < ApplicationController
   end
 
   def create
-    if params[:gridRadios] == "option1"
-      new_params = message_params.except[:delay_period]
-    elsif params[:gridRadios] == "option2"
-      new_params = message_params.except[:send_date]
-    end
 
-    @message = Message.new(new_params)
+    @message = Message.new(message_params)
     @message.user = current_user
 
     if @message.save
       flash[:notice] = "Your message has been successfully created"
-      message = MessageMailer.with(message: @message, recipient: @message.recipient).send_message
-      message.deliver_now
+
+      if params[:gridRadios] == "option1"
+        to_send_at = Date.strptime(message_params[:send_date], "%m/%d/%Y")
+      elsif params[:gridRadios] == "option2"
+        to_send_at = Date.today + message_params[:delay_period].to_i
+      end
+
+      MessageJob.set(wait_until: to_send_at.to_s).perform_later(@message.id)
+
       redirect_to messages_path
     else
       render :new
@@ -46,7 +48,7 @@ class MessagesController < ApplicationController
       :subject,
       :content,
       :send_date,
-      :delay_date,
+      :delay_period,
       )
   end
 

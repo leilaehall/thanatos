@@ -4,7 +4,7 @@
       <div class="head">
         <br>
         <h1>
-          <strong> Personal Messages Pages </strong>
+          <strong> Personal Messages Page </strong>
         </h1>
         <br>
         <h5>
@@ -73,14 +73,14 @@
             <%= f.input :delay_period,
             required: true,
             autofocus: true,
-            collection: ["One week", "One Month", "Half a year", "One Year"],
+            collection: [["7", "One week"], ["30", "One Month"], ["182", "Half a year"], ["365", "One Year"]],
+            label_method: :second, value_method: :first,
             input_html: { autocomplete: "delay_period", placeholder:"Delay period"},
             wrapper_html: { id: "delay_period_wrapper", hidden: true } %>
           </div>
-        </div>
       </div>
       <div>
-        <%= f.submit "SEND", class: "get-started-button-delegate" %>
+        <%= f.submit "SAVE", class: "get-started-button-delegate" %>
       </div>
       <% end %>
     </div>

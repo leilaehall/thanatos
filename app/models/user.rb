@@ -27,11 +27,11 @@ class User < ApplicationRecord
   end
 
   def basics_complete?
-    false
+    !self.funeral_preferences[0].process.empty?
   end
 
   def ceremony_complete?
-    false
+    !self.funeral_preferences[0].embalming.blank?
   end
 
   def business_selection_complete?
@@ -39,7 +39,7 @@ class User < ApplicationRecord
   end
 
   def messages_complete?
-    false
+    self.messages.any?
   end
 
   def social_media_complete?
