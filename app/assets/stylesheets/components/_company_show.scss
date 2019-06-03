@@ -1,6 +1,6 @@
 .company-banner {
   background-size: cover;
-  height:620px;
+  height:820px;
   background-position: center;
   padding: 150px 0;
   background-size:100%;
@@ -11,7 +11,7 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 62px;
+  font-size: 54px;
   font-weight: bold;
   padding:20px;
 }
@@ -26,8 +26,9 @@
 }
 
 .company-button{
-  margin: 80px;
-  margin-left: 600px;
+  position: absolute;
+  bottom: 30px;
+  left: 600px;
   border: 0;
 }
 
@@ -43,7 +44,7 @@
 .company-banner h3 {
   margin-top: 42px;
     margin-bottom: 73px;
-  font-size: 27px;
+  font-size: 20px;
   color: white;
   padding-left:20px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -51,9 +52,20 @@
 
 .paragraph-show{
   margin-top: 55px;
+  margin-right:30px;
 }
 
 .simple_form .companies_preference{
   display:flex;
   justify-content:center;
+  position:relative;
+}
+
+.description{
+  margin-top:60px;
+  width:900px;
+}
+.website{
+  text-transform: lowercase;
+  word-spacing:-3px;
 }
