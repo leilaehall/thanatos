@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_110317) do
+ActiveRecord::Schema.define(version: 2019_06_03_152802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_110317) do
   end
 
   create_table "social_platforms", force: :cascade do |t|
-    t.string "name"
+    t.string "channel"
     t.boolean "choice"
     t.string "username"
     t.bigint "user_id"
