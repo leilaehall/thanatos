@@ -6,6 +6,7 @@ class MessageMailer < ApplicationMailer
   #
   def send_message
     @recipient = params[:recipient]
+    @message = params[:message]
     mail(to: @recipient, subject: 'You got a new message')
   end
 end
