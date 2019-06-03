@@ -3,6 +3,7 @@
   height:620px;
   background-position: center;
   padding: 150px 0;
+  background-size:100%;
 }
 
 .company-banner h1 {
@@ -52,4 +53,7 @@
   margin-top: 55px;
 }
 
-
+.simple_form .companies_preference{
+  display:flex;
+  justify-content:center;
+}
