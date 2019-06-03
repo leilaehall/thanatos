@@ -23,6 +23,6 @@ module Thanatos
     # the framework and any gems in your application.
 
     config.active_job.queue_adapter = :sidekiq #for delayed message sending.
-
+      # config.exceptions_app = self.routes
   end
 end

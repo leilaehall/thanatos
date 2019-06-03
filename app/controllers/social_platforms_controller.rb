@@ -8,7 +8,8 @@ class SocialPlatformsController < ApplicationController
     @social_platform.user = current_user
 
     if @social_platform.save
-      flash[:notice] = "Your preference has been saved."
+      flash[:notice] = "Your preference have been saved."
+      redirect_to dashboard_path
     else
       render :new
     end
