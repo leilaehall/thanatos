@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     end
   end
 
+
+  resources :social_platforms, only: [:index, :create, :update]
+
   resources :companies, only: [:index, :show, :update]
 
   resources :preferences, only: [:create, :update] do

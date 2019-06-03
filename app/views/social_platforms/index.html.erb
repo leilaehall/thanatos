@@ -1,0 +1,118 @@
+<div class="upper">
+  <h2>Social Media</h2>
+  <br>
+  <h4>Specify here your wishes related to <strong>your online presence</strong>. By filling out the information on your social media accounts, your delegate(s) will know exactly about your wishes for your online presence after you pass away.</h4>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <i class="fab fa-facebook" style="font-size: 5em; color: #2C89B1"></i>
+    </div>
+    <div class="col-8">
+      <%= simple_form_for @social_platform, url: social_platforms_path do |f| %>
+      <div class="form-wrapper">
+        <div class="form-container">
+          <div class="form-header">
+            <h3 class="form-title">FACEBOOK</h3>
+              <span class="line"></span>
+          </div>
+            <div class="form-body">
+              <div class="form-inputs">
+                <a href="https://www.facebook.com/help/103897939701143">Check Facebook Policy</a>
+                <%= f.input :name, input_html: { value: "Facebook" }, as: :hidden %>
+                <%= f.input :username %>
+                <%= f.input :choice, collection: ["Cancel Account", "Memorialize Account"] %>
+                <%= f.submit "Save"%>
+      <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-2">
+      <i class="fab fa-twitter" style="font-size: 5em; color: #2C89B1"></i>
+    </div>
+    <div class="col-8">
+      <%= simple_form_for @social_platform, url: social_platforms_path do |f| %>
+      <div class="form-wrapper">
+        <div class="form-container">
+          <div class="form-header">
+            <h3 class="form-title">TWITTER</h3>
+              <span class="line"></span>
+          </div>
+            <div class="form-body">
+              <div class="form-inputs">
+                <a href="https://help.twitter.com/en/rules-and-policies/contact-twitter-about-a-deceased-family-members-account">Check Twitter Policy</a>
+                <%= f.input :name, input_html: { value: "Twitter" }, as: :hidden %>
+                <%= f.input :username %>
+                <%= f.input :choice, collection: ["Cancel Account", "Memorialize Account"] %>
+                <%= f.submit "Save"%>
+      <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <i class="fab fa-instagram" style="font-size: 5em; color: #2C89B1"></i>
+    </div>
+    <div class="col-8">
+      <%= simple_form_for @social_platform, url: social_platforms_path do |f| %>
+      <div class="form-wrapper">
+        <div class="form-container">
+          <div class="form-header">
+            <h3 class="form-title">INSTAGRAM</h3>
+              <span class="line"></span>
+          </div>
+            <div class="form-body">
+              <div class="form-inputs">
+                <a href="https://help.instagram.com/264154560391256">Check Instagram Policy</a>
+                <%= f.input :name, input_html: { value: "Instagram" }, as: :hidden %>
+                <%= f.input :username %>
+                <%= f.input :choice, collection: ["Cancel Account", "Memorialize Account"] %>
+                <%= f.submit "Save"%>
+      <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <i class="fab fa-linkedin" style="font-size: 5em; color: #2C89B1"></i>
+    </div>
+    <div class="col-8">
+      <%= simple_form_for @social_platform, url: social_platforms_path do |f| %>
+      <div class="form-wrapper">
+        <div class="form-container">
+          <div class="form-header">
+            <h3 class="form-title">LINKEDIN</h3>
+              <span class="line"></span>
+          </div>
+            <div class="form-body">
+              <div class="form-inputs">
+                <a href="https://www.linkedin.com/help/linkedin/ask/ts-rdmlp">Check LinkedIn Policy</a>
+                <%= f.input :name, input_html: { value: "Linkedin" }, as: :hidden %>
+                <%= f.input :username %>
+                <%= f.input :choice, collection: ["Cancel Account", "Memorialize Account"] %>
+                <%= f.submit "Save"%>
+      <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<br>
+<br>
+    <%= link_to "⬅️ DASHBOARD", dashboard_path, class: "dashboard-button-delegate" %>
+
