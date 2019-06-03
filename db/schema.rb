@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_31_134359) do
+ActiveRecord::Schema.define(version: 2019_06_03_095439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,16 @@ ActiveRecord::Schema.define(version: 2019_05_31_134359) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "social_platforms", force: :cascade do |t|
+    t.string "name"
+    t.boolean "choice"
+    t.string "username"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_social_platforms_on_user_id"
+  end
+
   create_table "templates", force: :cascade do |t|
     t.string "category"
     t.bigint "user_id"
@@ -116,5 +126,6 @@ ActiveRecord::Schema.define(version: 2019_05_31_134359) do
   add_foreign_key "delegates", "users"
   add_foreign_key "funeral_preferences", "users"
   add_foreign_key "messages", "users"
+  add_foreign_key "social_platforms", "users"
   add_foreign_key "templates", "users"
 end
