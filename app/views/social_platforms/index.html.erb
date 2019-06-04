@@ -1,7 +1,7 @@
 <div class="upper">
   <h2>Social Media</h2>
   <br>
-  <h4>Specify here your wishes related to <strong>your online presence</strong>. By filling out the information on your social media accounts, your delegate(s) will know exactly about your wishes for your online presence after you pass away.</h4>
+  <h4>Here you have the opportunity to specify your wishes related to <strong>your online presence</strong>. Please fill in the requested information on your social media accounts.</h4>
 </div>
 
 <div class="container">
@@ -11,7 +11,7 @@
     </div>
     <div class="col-8">
       <%= simple_form_for @social_platform, url: social_platforms_path do |f| %>
-      <div class="form-wrapper">
+      <div class="form-wrapper-social">
         <div class="form-container">
           <div class="form-header">
             <h3 class="form-title">FACEBOOK</h3>
@@ -20,11 +20,11 @@
             <div class="form-body">
               <div class="form-inputs">
                 <a href="https://www.facebook.com/help/103897939701143">Check Facebook Policy</a>
-                <%= f.input :name, input_html: { value: "Facebook" }, as: :hidden %>
+                <%= f.input :channel, input_html: { value: "Facebook" }, as: :hidden %>
                 <%= f.input :username %>
                 <%= f.input :choice, collection: ["Cancel Account", "Memorialize Account"] %>
-                <%= f.submit "Save"%>
-      <% end %>
+                <%= f.submit "SAVE", class: "social-save-button" %>
+              <% end %>
               </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
     </div>
     <div class="col-8">
       <%= simple_form_for @social_platform, url: social_platforms_path do |f| %>
-      <div class="form-wrapper">
+      <div class="form-wrapper-social">
         <div class="form-container">
           <div class="form-header">
             <h3 class="form-title">TWITTER</h3>
@@ -46,10 +46,10 @@
             <div class="form-body">
               <div class="form-inputs">
                 <a href="https://help.twitter.com/en/rules-and-policies/contact-twitter-about-a-deceased-family-members-account">Check Twitter Policy</a>
-                <%= f.input :name, input_html: { value: "Twitter" }, as: :hidden %>
+                <%= f.input :channel, input_html: { value: "Twitter" }, as: :hidden %>
                 <%= f.input :username %>
                 <%= f.input :choice, collection: ["Cancel Account", "Memorialize Account"] %>
-                <%= f.submit "Save"%>
+                <%= f.submit "SAVE", class: "social-save-button" %>
       <% end %>
               </div>
             </div>
@@ -63,7 +63,7 @@
     </div>
     <div class="col-8">
       <%= simple_form_for @social_platform, url: social_platforms_path do |f| %>
-      <div class="form-wrapper">
+      <div class="form-wrapper-social">
         <div class="form-container">
           <div class="form-header">
             <h3 class="form-title">INSTAGRAM</h3>
@@ -72,11 +72,11 @@
             <div class="form-body">
               <div class="form-inputs">
                 <a href="https://help.instagram.com/264154560391256">Check Instagram Policy</a>
-                <%= f.input :name, input_html: { value: "Instagram" }, as: :hidden %>
+                <%= f.input :channel, input_html: { value: "Instagram" }, as: :hidden %>
                 <%= f.input :username %>
                 <%= f.input :choice, collection: ["Cancel Account", "Memorialize Account"] %>
-                <%= f.submit "Save"%>
-      <% end %>
+                <%= f.submit "SAVE", class: "social-save-button" %>
+              <% end %>
               </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
     </div>
     <div class="col-8">
       <%= simple_form_for @social_platform, url: social_platforms_path do |f| %>
-      <div class="form-wrapper">
+      <div class="form-wrapper-social">
         <div class="form-container">
           <div class="form-header">
             <h3 class="form-title">LINKEDIN</h3>
@@ -99,17 +99,46 @@
             <div class="form-body">
               <div class="form-inputs">
                 <a href="https://www.linkedin.com/help/linkedin/ask/ts-rdmlp">Check LinkedIn Policy</a>
-                <%= f.input :name, input_html: { value: "Linkedin" }, as: :hidden %>
+                <%= f.input :channel, input_html: { value: "Linkedin" }, as: :hidden %>
                 <%= f.input :username %>
                 <%= f.input :choice, collection: ["Cancel Account", "Memorialize Account"] %>
-                <%= f.submit "Save"%>
-      <% end %>
+                <%= f.submit "SAVE", class: "social-save-button" %>
+              <% end %>
               </div>
             </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-2">
+      <i class="fas fa-plus-circle" style="font-size: 5em; color: #2C89B1"></i>
+    </div>
+    <div class="col-8">
+      <%= simple_form_for @social_platform, url: social_platforms_path do |f| %>
+      <div class="form-wrapper-social">
+        <div class="form-container">
+          <div class="form-header">
+            <h3 class="form-title">CREATE NEW</h3>
+              <span class="line"></span>
+          </div>
+            <div class="form-body">
+              <div class="form-inputs">
+                <%= f.input :channel,
+                input_html: { autocomplete: "channel" },
+                collection: ["Youtube", "Pinterest", "Tumblr", "Skype", "Google+", "WeChat", "Snapchat", "Telegram", "Reddit", "Other"] %>
+                <%= f.input :username %>
+                <%= f.input :choice, collection: ["Cancel Account", "Memorialize Account"] %>
+                <%= f.submit "CREATE", class: "social-save-button" %>
+              <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 </div>
 <br>

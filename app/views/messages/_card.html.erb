@@ -1,0 +1,17 @@
+<div class="col-lg-13">
+  <div class="form-wrapper-delegate" date-message-id="<%= message.id %>">
+    <div class="form-container-delegate">
+      <div class="form-header-delegate">
+        <h2 class="form-title-delegate">MESSAGE</h2>
+        <span class="line"></span>
+      </div>
+      <span class="line"></span>
+      <p> Subject:
+        <%= message.subject %>
+        </p>
+      <p> Content: <%= message.content %></p>
+      <p> Date to be send: <%= message.send_date %></p>
+      <%= link_to "X", message_path(message), method: :delete, remote: true, class: "card-delete-button" %>
+    </div>
+  </div>
+</div>
