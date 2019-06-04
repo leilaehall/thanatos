@@ -9,7 +9,11 @@
       Connect with the right providers for your needs <br>
       Easily share information with friends and family
     </p>
-    <button type="button" class="get-started-button btn-margin-top">GET STARTED</button>
+    <% if current_user %>
+    <%= button_to "GET STARTED", dashboard_path, class: "get-started-button btn-margin-top", method: "get" %>
+    <% else %>
+    <%= button_to "GET STARTED", new_user_session_path, class: "get-started-button btn-margin-top", method: "get" %>
+    <% end %>
   </div>
 
   <div>
@@ -31,7 +35,11 @@
       We can help you through every stage of funeral planning, memorializing and grieving.
 
     </p>
-    <button type="button" class="get-started btn-margin-top">EXPLORE</button>
+    <% if current_user %>
+    <%= button_to "EXPLORE", dashboard_path, class: "get-started btn-margin-top", method: "get" %>
+    <% else %>
+    <%= button_to "EXPLORE", new_user_session_path, class: "get-started btn-margin-top", method: "get" %>
+    <% end %>
   </div>
 
   <div>
@@ -96,7 +104,11 @@
         </p>
       </div>
     </div>
-    <button type="button" class="get-started-button get-started-margin-left">GET STARTED</button>
+    <% if current_user %>
+    <%= button_to "GET STARTED", dashboard_path, class: "get-started-button btn-margin-top", method: "get" %>
+    <% else %>
+    <%= button_to "GET STARTED", new_user_session_path, class: "get-started-button btn-margin-top", method: "get" %>
+    <% end %>
   </section>
 </div>
 
