@@ -5,6 +5,9 @@ class DashboardController < ApplicationController
     get_progress
   end
 
+  def summary
+  end
+
   def get_progress
     @progress = 0
     if current_user.delegates_complete? == true

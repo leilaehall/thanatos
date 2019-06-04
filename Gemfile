@@ -20,6 +20,7 @@ gem 'sidekiq' #for delayed message sending
 gem 'sidekiq-failures', '~> 1.0' #for delayed message sending
 
 # OWN GEMS
+gem 'prawn'
 gem 'letter_opener', group: :development
 
 group :development do
