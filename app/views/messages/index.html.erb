@@ -30,14 +30,16 @@
         <%= render 'messages/form', message: @message %>
       </div>
     </div>
-    <div>
-      <% @messages.each do |message| %>
-      <%= render 'messages/card', message: message %>
-      <% end %>
-    </div>
-    <%= link_to "⬅️ DASHBOARD", dashboard_path, class: "dashboard-button-delegate" %>
   </div>
 
+  <div id="messages">
+    <% @messages.each do |message| %>
+    <%= render 'messages/card', message: message %>
+    <% end %>
+  </div>
+  <%= link_to "⬅️ DASHBOARD", dashboard_path, class: "dashboard-button-delegate" %>
+
+</div>
   <script>
     document.getElementById("gridRadios1").addEventListener("click", function(e) {
       document.getElementById("send_date_wrapper").hidden = false;
