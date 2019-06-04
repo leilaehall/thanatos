@@ -158,10 +158,10 @@
   margin-bottom: 30px;
   // margin-top: 20px;
   margin-left: 25px;
-  &:hover {
+}
+.dashboard-button-delegate:hover {
   filter: brightness(92%);
   text-decoration: none;
-  }
 }
 .dashboard-button-edit {
   margin-top: -10px;
