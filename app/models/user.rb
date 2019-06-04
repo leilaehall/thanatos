@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :funeral_preferences, dependent: :destroy
   has_many :company_preferences, through: :funeral_preferences
   has_many :templates
-  has_many :social_platforms
+  has_many :social_platforms, dependent: :destroy
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true

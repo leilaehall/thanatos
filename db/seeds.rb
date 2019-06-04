@@ -3,6 +3,7 @@ User.destroy_all
 Company.destroy_all
 Delegate.destroy_all
 FuneralPreference.destroy_all
+SocialPlatform.destroy_all
 
 puts 'Creating users...'
 users_attributes = [
@@ -43,9 +44,9 @@ p users
 puts 'Creating companies...'
 companies_attributes = [
   {
-    name: "IterFlora",
+    name: "InterFlora",
     address: 'High Street, Hampton Wick, KT1',
-    company_email: 'iterflora@gmail.uk',
+    company_email: 'interflora@gmail.uk',
     description: 'At this difficult time, we can at least make choosing, ordering and sending funeral flowers a little easier for you. Choose from our carefully selected range of classically beautiful funeral flowers and just let us know where we need to deliver them. ',
     category: 'florist',
     logo: "florist2.jpg",
@@ -196,6 +197,23 @@ funeral_preferences_attributes = [
   }
 ]
 funeral_preferences = FuneralPreference.create!(funeral_preferences_attributes)
+
+puts "Creating social platforms..."
+social_platforms_attributes = [
+  {
+    channel: 'Facebook',
+    choice: "Cancel Account",
+    username: 'davidj',
+    user: users[0]
+  },
+  {
+    channel: 'Instagram',
+    choice: "Memorialize Account",
+    username: 'maggieatwood',
+    user: users[1]
+  }
+]
+social_platform_preferences = SocialPlatform.create!(social_platforms_attributes)
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
