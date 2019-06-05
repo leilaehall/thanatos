@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'preferences/basics'
   get 'preferences/ceremony'
+  get 'scroll', to: "pages#scroll"
   root to: 'pages#home'
   devise_for :users, controllers: { registrations: "registrations" }
   %w( 404 422 500 503 ).each do |code|
