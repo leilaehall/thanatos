@@ -48,12 +48,16 @@
 
 .card-company {
   position: relative;
-
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
   position:relative;
+
+}
+
+.card-company:hover{
+  box-shadow: 0 0 25px black;
 
 }
 
@@ -75,11 +79,20 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  color:#2C89B1;
+
 }
 
-.card-company .card-company-infos a{
- color:#2C89B1;
+.card-company-link .card-company .card-company-infos a{
+  color:#2C89B1;
+  text-decoration: none;
+
 }
+
+.card-company-link:hover {
+  text-decoration: none !important;
+}
+
 
 .selected-item{
   border: 4px solid #2C89B1;

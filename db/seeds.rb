@@ -53,7 +53,7 @@ companies_attributes = [
     phone: "+44 1632 988060"
   },
   {
-    name: "Harrison Funeral Home",
+    name: "Harrison Funerals",
     address: 'King Street, Twickenham, London, TW1',
     company_email: 'harrisonfuneralh@gmail.com',
     description: 'HFH is designed specifically for the provision of funeral services and related functions including receptions. Its design is meant to ensure privacy to each family during every phase of their time at the funeral home. This includes arrangement consultation, visitation, funeral service and reception. Our facility is intended to be warm, open, airy and positive.',
