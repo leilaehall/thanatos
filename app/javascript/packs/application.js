@@ -18,6 +18,9 @@ var fullPageInstance = new fullpage('#myFullpage', {
     navigation: true,
     licenseKey: '8B14D2CD-C71C4112-B58FDD37-27DF84C6',
     sectionsColor:['#F4F4F4', '#2C89B1', '#F4F4F4', '#2C89B1'],
-    fitToSection: false
+    fitToSection: false,
+    fixedElements: '.footer-thanatos',
+
+    // continuousVertical: true
 
 });
