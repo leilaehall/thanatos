@@ -6,11 +6,16 @@
         <span class="line"></span>
       </div>
       <span class="line"></span>
-      <p> Subject:
+      <br>
+      <p> <strong> Subject: </strong>
         <%= message.subject %>
         </p>
-      <p> Content: <%= message.content %></p>
-      <p> Send date: <%= message.send_date %></p>
+      <p> <strong> Content: </strong><%= message.content %></p>
+      <% if !message.send_date.empty? %>
+      <p> <strong> Send date: </strong> <%= message.send_date %></p>
+      <% else %>
+      <p> <strong> Delay period: </strong> <%= message.delay_period %></p>
+      <% end %>
       <%= link_to "X", message_path(message), method: :delete, remote: true, class: "card-delete-button" %>
     </div>
   </div>
