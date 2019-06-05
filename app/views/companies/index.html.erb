@@ -17,20 +17,22 @@
       <div class="company-cards">
         <% @companies.each do |company| %>
         <% pref = company.company_preferences.any? {|preference| preference.funeral_preference.user == current_user} %>
-        <div class="card-company <%=  "selected-item" if pref  %>">
-          <%= image_tag company.logo %>
-          <div class="card-company-infos">
-            <div>
-              <% if pref %>
-              <%= image_tag 'check.png', class: "#{'selected-image' if pref}" %>
-              <% end %>
-              <h2><%= link_to company.name, company_path(company)%></h2>
-              <p><%= company.address %></p>
-              <p><strong><%= company.category %></strong>
-              </p>
+        <%= link_to company_path(company), class: "card-company-link" do %>
+          <div class="card-company <%=  "selected-item" if pref  %>">
+            <%= image_tag company.logo %>
+            <div class="card-company-infos">
+              <div>
+                <% if pref %>
+                <%= image_tag 'check.png', class: "#{'selected-image' if pref}" %>
+                <% end %>
+                <h2><%= company.name %></h2>
+                <p><%= company.address %></p>
+                <p><strong><%= company.category %></strong>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
         <% end %>
       </div>
 
