@@ -1,0 +1,22 @@
+.save-button-basics {
+  // width: 200px;
+  // height: 300px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  // font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color:#2C89B1;
+  border-radius: 25px;
+  padding: 15px;
+  margin-bottom: 25px;
+  // margin-top: 20px;
+  margin-left: 25px;
+  margin-top: -150px;
+}
+.save-button-basics:hover {
+  filter: brightness(92%);
+  text-decoration: none;
+}
