@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@company.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @company.category %>
+<% content_for :meta_image, cl_image_path(@company.logo.path) %>
+
 <div class="company-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.pexels.com/photos/917076/pexels-photo-917076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-size: cover;">
   <div class="company-container">
     <div class="company-info">

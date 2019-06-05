@@ -1,0 +1,5 @@
+meta_product_name: "Thanatos"
+meta_title: "Thanatos - Funeral Planning"
+meta_description: "Funeral planning options and to-dos Connect with the right providers for your needs Easily share information with friends and family"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :address, :religion, :gender, :scenario])
   end
+
+  def default_url_options
+    { host: ENV["https://www.thanatos.network/"] || "localhost:3000" }
+  end
 end
