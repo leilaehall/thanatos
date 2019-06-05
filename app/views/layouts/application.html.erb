@@ -34,11 +34,8 @@
 <body>
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
-  <div class="field">
-
-    <%= yield %>
-  </div>
-  <%= render 'shared/footer' %>
+  <%= yield %>
+  <%= render 'shared/footer' if controller.controller_name != 'pages' %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
 </body>
