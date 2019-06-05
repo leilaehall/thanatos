@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
       end
 
       if params[:gridRadios] == "option1"
-        to_send_at = Date.strptime(message_params[:send_date], "%m/%d/%Y")
+        to_send_at = Date.strptime(message_params[:send_date], "%d/%m/%Y")
       elsif params[:gridRadios] == "option2"
         to_send_at = Date.today + message_params[:delay_period].to_i
       end
