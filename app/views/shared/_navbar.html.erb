@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-thanatos">
+<div class="navbar navbar-expand-sm navbar-light navbar-thanatos <%= "navbar-fixed" if controller.controller_name == 'pages' %>">
   <%= link_to root_path, class: "navbar-brand" do %>
   <%= image_tag "thanatos-logo.png" %>
   <h1><%= "THANATOS" %></h1>
