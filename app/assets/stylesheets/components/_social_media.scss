@@ -1,10 +1,17 @@
  .form-wrapper-social {
   background-color: white;
   box-shadow: 0px 0px 10px rgba(1,1,1,0.3);
-  color:#7C7A7A;
+  color: #7C7A7A;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
   margin: 10px 0;
+  a {
+    color: #2C89B1
+  }
+}
+.form-title-social {
+  color: #2C89B1
+
 }
 .media {
   margin-left: 300px;
