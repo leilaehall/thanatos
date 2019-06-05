@@ -36,7 +36,7 @@
 
   <section>
     <div class="cards">
-      <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="Your legacy contact will inherit all of your dashboard data after you go." data-balloon-pos="up">
+      <div class="card-dashboard" data-balloon-length="large" data-balloon="Your legacy contact will inherit all of your dashboard data after you go." data-balloon-pos="up">
         <%= link_to "Legacy contact(s)", delegates_path %>
         <% if current_user.delegates_complete? %>
         <div class="checked">
@@ -45,7 +45,7 @@
         <% end %>
       </div>
 
-      <div class="card-dashboard card-centric"data-balloon-length="large" data-balloon="Your funeral basic choices: burrial vs. cremation,.." data-balloon-pos="up">
+      <div class="card-dashboard"data-balloon-length="large" data-balloon="Your funeral basic choices: burrial vs. cremation,.." data-balloon-pos="up">
         <%= link_to "Basics", basics_preferences_path %>
          <% if current_user.basics_complete? %>
          <div class="checked">
@@ -64,7 +64,7 @@
       </div>
 
       <div class="card-dashboard" data-balloon-length="large" data-balloon="Browse for local businesses to prepare your funeral : funeral homes, florists,.." data-balloon-pos="up">
-        <%= link_to "Find Local Businesses", companies_path %>
+        <%= link_to "Local Businesses", companies_path %>
          <% if current_user.business_selection_complete? %>
          <div class="checked">
           <%= image_tag "check.png"%>
@@ -81,7 +81,7 @@
          <% end %>
       </div>
 
-      <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="List your social media  & preferences so your delegate can execute your wishes" data-balloon-pos="up">
+      <div class="card-dashboard" data-balloon-length="large" data-balloon="List your social media  & preferences so your delegate can execute your wishes" data-balloon-pos="up">
         <%= link_to "Social Media", social_platforms_path %>
          <% if current_user.social_media_complete? %>
          <div class="checked">
@@ -90,7 +90,7 @@
          <% end %>
       </div>
 
-      <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="List your banking details so your delegate can close all accounts when you go." data-balloon-pos="up">
+      <div class="card-dashboard" data-balloon-length="large" data-balloon="List your banking details so your delegate can close all accounts when you go." data-balloon-pos="up">
         <%= link_to "Banking" %>
          <% if current_user.banking_complete? %>
          <div class="checked">
@@ -99,7 +99,7 @@
          <% end %>
       </div>
 
-      <div class="card-dashboard card-centric" data-balloon-length="large" data-balloon="List your insurance policies so your delegate can close them when you go." data-balloon-pos="up">
+      <div class="card-dashboard" data-balloon-length="large" data-balloon="List your insurance policies so your delegate can close them when you go." data-balloon-pos="up">
         <%= link_to "Insurance" %>
         <% if current_user.insurance_complete? %>
         <div class="checked">
