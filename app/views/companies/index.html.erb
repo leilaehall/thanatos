@@ -18,7 +18,7 @@
         <% @companies.each do |company| %>
         <% pref = company.company_preferences.any? {|preference| preference.funeral_preference.user == current_user} %>
         <%= link_to company_path(company), class: "card-company-link" do %>
-          <div class="card-company <%=  "selected-item" if pref  %>">
+          <div class="card-company zoom <%=  "selected-item" if pref  %>">
             <%= image_tag company.logo %>
             <div class="card-company-infos">
               <div>
