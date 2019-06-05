@@ -1,11 +1,23 @@
+
 class DashboardController < ApplicationController
 # change after coding done : remove SKIP!
-   skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!
   def index
     get_progress
   end
 
   def summary
+    respond_to do |format|
+      format.html { render :summary }
+      format.pdf do
+        pdf = Prawn::Document.new
+        pdf.text "Hello World!"
+        send_data pdf.render,
+          filename: "summary.pdf",
+          type: 'application/pdf',
+          disposition: 'inline'
+      end
+    end
   end
 
   def get_progress
