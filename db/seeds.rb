@@ -44,12 +44,57 @@ p users
 puts 'Creating companies...'
 companies_attributes = [
   {
+    name: "Flowers for funerals",
+    address: 'Seymour rd, Hampton Wick, KT1',
+    company_email: 'flowersforfuneral@gmail.com',
+    description:'The tragic news that someone near or dear has passed will never come at a good time, but it is important you are able to send sympathy flowers to the family, friends, colleagues or loved ones to say you are thinking of them at what is most certainly a difficult time.',
+    category: 'florist',
+    logo: "florist1.jpg",
+    phone: "+44 1632 960999"
+  },
+  {
+    name: "FuneralCar",
+    address: 'High Street, Teddington, KT1',
+    company_email: 'funeralcar@mail.uk',
+    description: 'We deal exclusively with the motoring needs of the funeral industry and understand your unique needs. If you need assistance with finding the right funeral vehicle or associated parts, services or accessories then talk to us today.',
+    category: 'car rental',
+    logo: "car2.jpg",
+    phone: "+44 1632 960066"
+  },
+  {
+    name: "Beggs funeral home",
+    address: 'Seymour rd, Hampton Wick, KT1',
+    company_email: 'bfh@gmail.uk',
+    description: 'We invite you to browse through our site and learn about our firm, our family, and what services we can offer to you and your family. We are very proud of our tradition, our facilities, and the services that we provide. Please feel free to visit our website often, and if a question arises, do not hesitate to call on us. Blessing to each of you.',
+    category: 'funeral home',
+    logo: "funeralhome3.jpg",
+    phone: "+44 1632 988060"
+  },
+  {
+    name: "Luxury in motion",
+    address: 'King Street, Twickenham, London, TW1',
+    company_email: 'linm@gmail.uk',
+    description: 'We at Luxury in motion are willing to help you with any requirements  that’s you may have. With an understanding team we are certain to meet your requirements for the day.',
+    category: 'car rental',
+    logo: "car3.jpg",
+    phone: "+44 1632 988060"
+  },
+  {
     name: "InterFlora",
     address: 'High Street, Hampton Wick, KT1',
     company_email: 'interflora@gmail.uk',
     description: 'At this difficult time, we can at least make choosing, ordering and sending funeral flowers a little easier for you. Choose from our carefully selected range of classically beautiful funeral flowers and just let us know where we need to deliver them. ',
     category: 'florist',
     logo: "florist2.jpg",
+    phone: "+44 1632 988060"
+  },
+  {
+    name: "Richmond funerals",
+    address: 'Church Street, Twickenham, TW1',
+    company_email: 'richmond@gmail.uk',
+    description: 'We invite you to browse through our site and learn about our firm, our family, and what services we can offer to you and your family. We are very proud of our tradition, our facilities, and the services that we provide. Please feel free to visit our website often, and if a question arises, do not hesitate to call on us. Blessing to each of you.',
+    category: 'funeral home',
+    logo: "funeralhome4.jpg",
     phone: "+44 1632 988060"
   },
   {
@@ -69,24 +114,6 @@ companies_attributes = [
     category: 'car rental',
     logo: "car1.jpg",
     phone: "+44 1882 960068"
-  },
-  {
-    name: "FuneralCar",
-    address: 'High Street, Teddington, KT1',
-    company_email: 'funeralcar@mail.uk',
-    description: 'We deal exclusively with the motoring needs of the funeral industry and understand your unique needs. If you need assistance with finding the right funeral vehicle or associated parts, services or accessories then talk to us today.',
-    category: 'car rental',
-    logo: "car2.jpg",
-    phone: "+44 1632 960066"
-  },
-  {
-    name: "Flowers for funerals",
-    address: 'Seymour rd, Hampton Wick, KT1',
-    company_email: 'flowersforfuneral@gmail.com',
-    description:'The tragic news that someone near or dear has passed will never come at a good time, but it is important you are able to send sympathy flowers to the family, friends, colleagues or loved ones to say you are thinking of them at what is most certainly a difficult time.',
-    category: 'florist',
-    logo: "florist1.jpg",
-    phone: "+44 1632 960999"
   },
   {
     name: "Walker Funeral Home",
