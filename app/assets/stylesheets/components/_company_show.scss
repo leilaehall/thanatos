@@ -30,6 +30,12 @@
   bottom: 30px;
   left: 500px;
   border: 0;
+  text-transform:uppercase;
+}
+
+.company-button:hover{
+  color:white;
+  opacity: 0.8;
 }
 
 .company-banner h2 {
