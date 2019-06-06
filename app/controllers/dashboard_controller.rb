@@ -7,21 +7,22 @@ class DashboardController < ApplicationController
   end
 
   def summary
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
     @delegates = Delegate.where(user: current_user)
     @preference = current_user.funeral_preferences
+    @messages = Message.where(user: current_user)
+    @social_platforms = SocialPlatform.where(user: current_user)
 
+
+    @companies = []
+
+    current_user.company_preferences.each do |p|
+      @companies << Company.where(id: p.company_id).first if Company.where(id: p.company_id)
+    end
 
     respond_to do |format|
       format.html { render :summary }
-      format.pdf do
-        pdf = Prawn::Document.new
-        pdf.text "Hello World!"
-        send_data pdf.render,
-          filename: "summary.pdf",
-          type: 'application/pdf',
-          disposition: 'inline'
-      end
+
     end
   end
 
@@ -58,4 +59,6 @@ class DashboardController < ApplicationController
       @progress += 10
     end
   end
+
+
 end
