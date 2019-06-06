@@ -1,39 +1,39 @@
-<div class="container">
+<div class="container-custom">
     <div class="row">
       <div class="col-12 text-center">
-        <div class="head-delegate">
-          <h1><strong><%= @user.first_name %>'s Summary</strong></h1>
+        <div class="head-social">
+          <h1><strong><%= current_user.first_name %>'s Summary</strong></h1>
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class=col-lg-12>
-        <div class="form-wrapper-delegate padded-box">
-          <div class="form-header-delegate">
+        <div class="form-wrapper-social padded-box">
+          <div class="form-header-delegate social">
             <h3 class="form-title-delegate">PERSONAL DETAILS</h3>
             <span class="line"></span>
           </div>
           <p>
             <strong>Name: </strong>
-            <%= @user.first_name %>
-            <%= @user.last_name %>
+            <%= current_user.first_name %>
+            <%= current_user.last_name %>
           </p>
           <p>
             <strong>Email: </strong>
-            <%= @user.email %>
+            <%= current_user.email %>
           </p>
           <p>
             <strong>Address: </strong>
-            <%= @user.address %>
+            <%= current_user.address %>
           </p>
           <p>
             <strong>Religion: </strong>
-            <%= @user.religion %>
+            <%= current_user.religion %>
           </p>
           <p>
             <strong>Scenario: </strong>
-            <%= @user.scenario %>
+            <%= current_user.scenario %>
           </p>
         </div>
       </div>
@@ -41,8 +41,8 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <div class="form-wrapper-delegate padded-box">
-          <div class="form-header-delegate">
+        <div class="form-wrapper-social padded-box">
+          <div class="form-header-delegate social">
             <h3 class="form-title-delegate">DELEGATES</h3>
             <span class="line"></span>
           </div>
@@ -67,8 +67,8 @@
 
 <div class="row">
   <div class="col-lg-12">
-    <div class="form-wrapper-delegate padded-box">
-      <div class="form-header-delegate">
+    <div class="form-wrapper-social padded-box">
+      <div class="form-header-delegate social">
         <h3 class="form-title-delegate">CEREMONY PREFERENCES</h3>
         <span class="line"></span>
       </div>
@@ -80,37 +80,156 @@
         <p>
           <strong>CEREMONY SPECIFICATIONS</strong>
         </p>
+          <% if p.address && p.address != "" %>
         <p>
           <strong>Address: </strong>
           <%= p.address %>
         </p>
+        <% end %>
+        <% if p.guest_list && p.guest_list != "" %>
         <p>
           <strong>Guest list: </strong>
-          <%= p.guest_list %>
+          <%= p.guest_list  %>
         </p>
+        <% end %>
+        <% if p.car && p.car != "" %>
         <p>
           <strong>Car: </strong>
           <%= p.car %>
         </p>
+        <% end %>
         <p>
+          <% if p.music && p.music != "" %>
           <strong>Music: </strong>
-          <%= p.music %> - <strong>Speaker: </strong>
-          <%= p.speaker %> - <strong>Reading: </strong>
+          <%= p.music %> -
+          <% end %>
+          <% if p.speaker && p.speaker != "" %>
+          <strong>Speaker: </strong>
+          <%= p.speaker %> -
+          <% end %>
+          <% if p.reading && p.reading != "" %>
+          <strong>Reading: </strong>
           <%= p.reading %>
+          <% end %>
         </p>
+        <% if p.collection_for_charity && p.collection_for_charity != "" %>
         <p>
           <strong>Charity: </strong>
           <%= p.collection_for_charity %>
         </p>
+        <% end %>
+        <% if p.dress && p.dress != "" %>
         <p><strong>Dress: </strong>
-          <%= p.dress %> - <strong>Hairstyle: </strong>
-          <%= p.hairstyle %> - <strong>Make-up: </strong>
+          <%= p.dress %> -
+          <% end %>
+          <% if p.hairstyle && p.hairstyle != "" %>
+          <strong>Hairstyle: </strong>
+          <%= p.hairstyle %>
+          <% end %>
+          <% if p.make_up && p.make_up != "" %>
+          <strong>Make-up: </strong>
           <%= p.make_up %>
+          <% end %>
         </p>
       </div>
       <% end %>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="form-wrapper-social padded-box">
+        <div class="form-header-delegate social">
+          <h3 class="form-title-delegate">BUSINESS PREFERENCES</h3>
+          <span class="line"></span>
+        </div>
+        <% @companies.each do |c| %>
+        <p>
+          <strong>Name: </strong>
+          <%= c.name %>
+        </p>
+        <p>
+          <strong>Business type: </strong>
+          <%= c.category %>
+        </p>
+        <p>
+          <strong>Address: </strong>
+          <%= c.address %>
+        </p>
+        <p>
+          <strong>Email: </strong>
+          <%= c.company_email %> - <strong>Phone number: </strong>
+          <%= c.phone %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="form-wrapper-social padded-box">
+        <div class="form-header-delegate social">
+          <h3 class="form-title-delegate">MESSAGES</h3>
+          <span class="line"></span>
+        </div>
+        <% @messages.each do |m| %>
+        <p>
+          <strong>Recipient: </strong>
+          <%= m.recipient %>
+        </p>
+        <p>
+          <strong>Subject: </strong>
+          <%= m.subject %>
+        </p>
+        <p>
+          <strong>Content: </strong>
+          <%= m.content %>
+        </p>
+        <p>
+          <strong>Send date: </strong>
+          <%= m.send_date %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="form-wrapper-social padded-box">
+        <div class="form-header-delegate social">
+          <h3 class="form-title-delegate">SOCIAL MEDIA</h3>
+          <span class="line"></span>
+        </div>
+        <% @social_platforms.each do |s| %>
+        <p>
+          <strong>Channel: </strong>
+          <%= s.channel %> - <strong>Username: </strong>
+          <%= s.username %>
+        </p>
+        <p>
+          <strong>Choice: </strong>
+          <% if s.choice %>
+          Cancel Account
+          <% else %>
+           Memorialize Account
+           <% end %>
+        </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+    <div class="das-btn">
+
+  <%= link_to "⬅ DASHBOARD", dashboard_path, class: "dashboard-button-summary" %>
+  </div>
+</div>
+</div>
+
+
 </div>
 </div>
 

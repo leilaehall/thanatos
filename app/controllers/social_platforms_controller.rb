@@ -25,6 +25,6 @@ class SocialPlatformsController < ApplicationController
   private
 
   def social_platform_params
-    params.require(:social_platform).permit(:username, :name, :choice)
+    params.require(:social_platform).permit(:username, :name, :choice, :channel)
   end
 end
