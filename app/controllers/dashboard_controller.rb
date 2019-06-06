@@ -7,6 +7,11 @@ class DashboardController < ApplicationController
   end
 
   def summary
+    @user = User.find(params[:id])
+    @delegates = Delegate.where(user: current_user)
+    @preference = current_user.funeral_preferences
+
+
     respond_to do |format|
       format.html { render :summary }
       format.pdf do

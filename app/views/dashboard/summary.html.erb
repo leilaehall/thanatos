@@ -1,12 +1,116 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12 text-center">
-      <br>
-      <div class="head-delegate">
-      <h1><strong><%= current_user.first_name %>'s Summary</strong></h1>
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="head-delegate">
+          <h1><strong><%= @user.first_name %>'s Summary</strong></h1>
+        </div>
+      </div>
     </div>
-    <div class="col-lg-13">
-</div>
+
+    <div class="row">
+      <div class=col-lg-12>
+        <div class="form-wrapper-delegate padded-box">
+          <div class="form-header-delegate">
+            <h3 class="form-title-delegate">PERSONAL DETAILS</h3>
+            <span class="line"></span>
+          </div>
+          <p>
+            <strong>Name: </strong>
+            <%= @user.first_name %>
+            <%= @user.last_name %>
+          </p>
+          <p>
+            <strong>Email: </strong>
+            <%= @user.email %>
+          </p>
+          <p>
+            <strong>Address: </strong>
+            <%= @user.address %>
+          </p>
+          <p>
+            <strong>Religion: </strong>
+            <%= @user.religion %>
+          </p>
+          <p>
+            <strong>Scenario: </strong>
+            <%= @user.scenario %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="form-wrapper-delegate padded-box">
+          <div class="form-header-delegate">
+            <h3 class="form-title-delegate">DELEGATES</h3>
+            <span class="line"></span>
+          </div>
+          <% @delegates.each do |delegate| %>
+            <p>
+              <strong>Name: </strong>
+              <%= delegate.first_name %>
+              <%= delegate.last_name %>
+            </p>
+            <p>
+              <strong>Relationship: </strong>
+              <%= delegate.relationship %>
+            </p>
+            <p>
+              <strong>Contact details: </strong>
+              <%= delegate.phone_number %> - <%= delegate.email %>
+            </p>
+          <% end %>
+        </div>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="form-wrapper-delegate padded-box">
+      <div class="form-header-delegate">
+        <h3 class="form-title-delegate">CEREMONY PREFERENCES</h3>
+        <span class="line"></span>
+      </div>
+      <% @preference.each do |p| %>
+        <p>
+          <strong>PRE-CEREMONY:</strong>
+          <%= p.process %> - <%= p.display %>
+        </p>
+        <p>
+          <strong>CEREMONY SPECIFICATIONS</strong>
+        </p>
+        <p>
+          <strong>Address: </strong>
+          <%= p.address %>
+        </p>
+        <p>
+          <strong>Guest list: </strong>
+          <%= p.guest_list %>
+        </p>
+        <p>
+          <strong>Car: </strong>
+          <%= p.car %>
+        </p>
+        <p>
+          <strong>Music: </strong>
+          <%= p.music %> - <strong>Speaker: </strong>
+          <%= p.speaker %> - <strong>Reading: </strong>
+          <%= p.reading %>
+        </p>
+        <p>
+          <strong>Charity: </strong>
+          <%= p.collection_for_charity %>
+        </p>
+        <p><strong>Dress: </strong>
+          <%= p.dress %> - <strong>Hairstyle: </strong>
+          <%= p.hairstyle %> - <strong>Make-up: </strong>
+          <%= p.make_up %>
+        </p>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
+</div>
+

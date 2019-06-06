@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :users
   get '/dashboard', to: 'dashboard#index'
-  get '/dashboard/summary', to: 'dashboard#summary'
+  get '/summary/:id', to: 'dashboard#summary'
 
   resources :messages, only: [:index, :create, :destroy]
 
