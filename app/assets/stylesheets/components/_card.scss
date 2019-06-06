@@ -95,6 +95,53 @@
   }
 }
 
+.card-dashboard-export-btn {
+    color: #2C89B1;
+    font-size: 25px;
+    border-style: solid;
+    text-align: center;
+    background: #2C89B1;
+    margin-top: 93px;
+    border-radius: 15px;
+    width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.card-dashboard-empty-btn {
+    color: #F4F4F4;
+    font-size: 25px;
+    border-style: solid;
+    text-align: center;
+    background: #F4F4F4;
+    margin-top: 30px;
+    border-radius: 15px;
+    width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    color: #white;
+
+  }
+}
+
 // .card-centric {
 //   display: flex;
 //   align-items: center;
